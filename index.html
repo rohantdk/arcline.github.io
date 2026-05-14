@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma Studio — Web Developer</title>
+
+  <!-- ─── OG / WhatsApp Preview Tags (Phase 4) ─── -->
+  <meta property="og:title" content="Forma Studio — Web Developer" />
+  <meta property="og:description" content="Landing pages, business sites & e-commerce for ambitious brands." />
+  <meta property="og:image" content="https://rohantdk.github.io/assets/og-banner.jpg" />
+  <meta property="og:url" content="https://rohantdk.github.io" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="description" content="Rohan Tidke — Freelance web developer building premium websites for ambitious businesses." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts (Syne + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       NAV
+  ═══════════════════════════════ -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner container">
+      <a href="#hero" class="nav__logo">Forma<span>.</span></a>
+      <ul class="nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#work" class="mobile-link">Work</a></li>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#contact" class="mobile-link">Let's Talk →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__glow"></div>
+    <div class="hero__accent-line"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__badge reveal">
+        <span class="hero__badge-dot"></span>
+        Available for Projects
+      </div>
+
+      <h1 class="hero__title reveal">
+        We Build<br/>
+        <em class="hero__title--accent">Websites</em><br/>
+        That Perform.
+      </h1>
+
+      <p class="hero__sub reveal">
+        Premium web experiences for ambitious brands.<br/>
+        By Rohan Tidke, based in Nashik, India.
+      </p>
+
+      <div class="hero__actions reveal">
+        <a href="#work" class="btn btn--primary">See My Work</a>
+        <a href="#contact" class="btn btn--ghost">Start a Project →</a>
+      </div>
+
+      <div class="hero__stats reveal">
+        <div class="stat">
+          <span class="stat__num">5+</span>
+          <span class="stat__label">Projects Delivered</span>
+        </div>
+        <div class="stat__div"></div>
+        <div class="stat">
+          <span class="stat__num">3+</span>
+          <span class="stat__label">Industries Served</span>
+        </div>
+        <div class="stat__div"></div>
+        <div class="stat">
+          <span class="stat__num">100%</span>
+          <span class="stat__label">Custom Built</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       WORK
+  ═══════════════════════════════ -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">Selected Work</p>
+        <h2 class="section__title">5 Projects. 5 Clients.<br/>All Live.</h2>
+      </div>
+
+      <div class="work__grid">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal">
+          <div class="project-card__mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <div class="mockup__url">provectuseng.com</div>
+              </div>
+              <div class="mockup__screen" style="--project-hue: #1B3D6B;">
+                <div class="mockup__inner">
+                  <div class="mockup__logo-area">PROVECTUS</div>
+                  <div class="mockup__content-lines">
+                    <div class="line line--wide"></div>
+                    <div class="line line--medium"></div>
+                    <div class="line line--short"></div>
+                  </div>
+                  <div class="mockup__blocks">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__tag">Corporate Website</span>
+            <h3 class="project-card__title">Provectus Engineering Solutions</h3>
+            <p class="project-card__desc">Corporate website for an engineering solutions company — built for trust, credibility, and converting B2B inquiries.</p>
+            <a href="https://provectuseng.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+              Live Demo <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card project-card--flip reveal">
+          <div class="project-card__mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <div class="mockup__url">rushikeshentp.com</div>
+              </div>
+              <div class="mockup__screen" style="--project-hue: #2D3A4A;">
+                <div class="mockup__inner">
+                  <div class="mockup__logo-area">RUSHIKESH ENT.</div>
+                  <div class="mockup__content-lines">
+                    <div class="line line--wide"></div>
+                    <div class="line line--medium"></div>
+                    <div class="line line--short"></div>
+                  </div>
+                  <div class="mockup__blocks">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__tag">Business Website</span>
+            <h3 class="project-card__title">Rushikesh Enterprises</h3>
+            <p class="project-card__desc">Website for a precision components manufacturer — industrial credibility with a professional, client-facing online presence.</p>
+            <a href="https://rushikeshentp.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+              Live Demo <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal">
+          <div class="project-card__mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <div class="mockup__url">scoutbags.netlify.app</div>
+              </div>
+              <div class="mockup__screen" style="--project-hue: #3D2B1A;">
+                <div class="mockup__inner">
+                  <div class="mockup__logo-area">SCOUT BAGS</div>
+                  <div class="mockup__content-lines">
+                    <div class="line line--wide"></div>
+                    <div class="line line--medium"></div>
+                    <div class="line line--short"></div>
+                  </div>
+                  <div class="mockup__blocks">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__tag">Product Website</span>
+            <h3 class="project-card__title">Scout Bags</h3>
+            <p class="project-card__desc">Premium product website for a bags brand — styled for retail appeal with a clean, conversion-focused product showcase.</p>
+            <a href="https://scoutbags.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+              Live Demo <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card project-card--flip reveal">
+          <div class="project-card__mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <div class="mockup__url">pressasoaps.netlify.app</div>
+              </div>
+              <div class="mockup__screen" style="--project-hue: #3D1B3A;">
+                <div class="mockup__inner">
+                  <div class="mockup__logo-area">PREESA SOAPS</div>
+                  <div class="mockup__content-lines">
+                    <div class="line line--wide"></div>
+                    <div class="line line--medium"></div>
+                    <div class="line line--short"></div>
+                  </div>
+                  <div class="mockup__blocks">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__tag">Product Website</span>
+            <h3 class="project-card__title">Preesa Soaps</h3>
+            <p class="project-card__desc">Website for a soap manufacturing brand — warm, clean, and brand-forward with a focus on product storytelling.</p>
+            <a href="https://pressasoaps.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+              Live Demo <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card reveal">
+          <div class="project-card__mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <div class="mockup__url">krishnafreshworld.netlify.app</div>
+              </div>
+              <div class="mockup__screen" style="--project-hue: #1A3D25;">
+                <div class="mockup__inner">
+                  <div class="mockup__logo-area">KRISHNA FRESH</div>
+                  <div class="mockup__content-lines">
+                    <div class="line line--wide"></div>
+                    <div class="line line--medium"></div>
+                    <div class="line line--short"></div>
+                  </div>
+                  <div class="mockup__blocks">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__tag">Export Business Website</span>
+            <h3 class="project-card__title">Krishna Fresh World</h3>
+            <p class="project-card__desc">Website for a dehydrated food products exporter — built for international trust and B2B lead generation across global markets.</p>
+            <a href="https://krishnafreshworld.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+              Live Demo <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SERVICES
+  ═══════════════════════════════ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow">What I Do</p>
+        <h2 class="section__title">Services Built for<br/>Real Businesses.</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card reveal">
+          <div class="service-card__num">01</div>
+          <h3 class="service-card__title">Landing Pages</h3>
+          <p class="service-card__desc">High-converting single-page websites built to capture leads, showcase your offer, and turn visitors into clients.</p>
+          <ul class="service-card__list">
+            <li>Custom design — no templates</li>
+            <li>WhatsApp & contact CTA ready</li>
+            <li>Mobile-first & fast loading</li>
+          </ul>
+        </div>
+
+        <div class="service-card service-card--accent reveal">
+          <div class="service-card__num">02</div>
+          <h3 class="service-card__title">Business Websites</h3>
+          <p class="service-card__desc">Multi-page websites for companies that need to build trust, showcase services, and rank on Google.</p>
+          <ul class="service-card__list">
+            <li>5–8 page custom site</li>
+            <li>SEO & GMB optimised</li>
+            <li>Razorpay + WhatsApp integration</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__num">03</div>
+          <h3 class="service-card__title">E-Commerce Stores</h3>
+          <p class="service-card__desc">Product-focused online stores that look premium and drive sales — built for local and international markets.</p>
+          <ul class="service-card__list">
+            <li>Product catalog + enquiry flow</li>
+            <li>Payment gateway integration</li>
+            <li>WhatsApp order management</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ABOUT
+  ═══════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container about__inner">
+
+      <div class="about__visual reveal">
+        <div class="about__card">
+          <div class="about__initials">RT</div>
+          <div class="about__location">📍 Nashik, India</div>
+        </div>
+        <div class="about__floater about__floater--1">Web Dev</div>
+        <div class="about__floater about__floater--2">UI Design</div>
+        <div class="about__floater about__floater--3">AI Tools</div>
+        <div class="about__floater about__floater--4">Figma</div>
+      </div>
+
+      <div class="about__content reveal">
+        <p class="section__eyebrow">About Me</p>
+        <h2 class="about__name">Rohan Tidke</h2>
+        <p class="about__text">
+          I'm a freelance web developer and designer based in Nashik, India — building clean, fast, and purposeful websites for small businesses and startups. I combine design thinking with real frontend engineering to deliver work that goes beyond aesthetics and actually helps businesses grow.
+        </p>
+        <p class="about__text">
+          Every project gets a custom-built solution — no page builders, no templates, no shortcuts. Just thoughtful code and design that represents your brand the right way, from day one.
+        </p>
+        <div class="about__chips">
+          <span>HTML / CSS / JS</span>
+          <span>React</span>
+          <span>Figma</span>
+          <span>Razorpay</span>
+          <span>WhatsApp API</span>
+          <span>SEO & GMB</span>
+          <span>GitHub Pages</span>
+          <span>Vercel</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CONTACT
+  ═══════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container contact__inner">
+
+      <div class="contact__content reveal">
+        <p class="section__eyebrow">Let's Work Together</p>
+        <h2 class="section__title">Got a Project<br/>in Mind?</h2>
+        <p class="contact__sub">
+          Whether you need a landing page, a full business site, or an e-commerce store — let's talk. I respond within 24 hours.
+        </p>
+        <div class="contact__buttons">
+          <a href="https://wa.me/918857852631" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+          <a href="mailto:tidkerohan8228@gmail.com" class="btn btn--ghost btn--lg">
+            Send an Email →
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__deco reveal">
+        <div class="deco__ring deco__ring--1"></div>
+        <div class="deco__ring deco__ring--2"></div>
+        <div class="deco__ring deco__ring--3"></div>
+        <div class="deco__center">Let's<br/>Build.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">Forma<span>.</span></span>
+      <span class="footer__copy">© 2025 Rohan Tidke. All rights reserved.</span>
+      <div class="footer__links">
+        <a href="https://wa.me/918857852631" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:tidkerohan8228@gmail.com">Email</a>
+        <a href="https://github.com/rohantdk" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
