@@ -1,11 +1,11 @@
-# Arcline — rohantdk.github.io
+# Arcline — arcline.github.io
 
 Portfolio site for Rohan Tidke. Built with pure HTML, CSS & JS. Hosted on GitHub Pages.
 
 ## 🚀 Deploy in 5 Steps
 
 1. Go to github.com → New repository
-2. Name it exactly: `rohantdk.github.io`
+2. Name it exactly: `arcline.github.io`
 3. Upload all files (keep folder structure):
    ```
    index.html
@@ -16,18 +16,18 @@ Portfolio site for Rohan Tidke. Built with pure HTML, CSS & JS. Hosted on GitHub
      og-banner.jpg  ← add this from Canva (1200×630px)
    ```
 4. Go to Settings → Pages → Source: `main` branch → `/root`
-5. Wait 60 seconds → visit `https://rohantdk.github.io`
+5. Wait 60 seconds → visit `https://arcline.github.io`
 
 ## 📱 WhatsApp OG Preview (Phase 4)
 
 Create `assets/og-banner.jpg` on Canva:
 - Size: 1200 × 630 px
-- Content: "Arcline · Web Developer · rohantdk.github.io"
+- Content: "Arcline · Web Developer · arcline.github.io"
 - Colors: #080808 background, #C8FF00 accent
 
 Then update this line in index.html:
 ```html
-<meta property="og:image" content="https://rohantdk.github.io/assets/og-banner.jpg" />
+<meta property="og:image" content="https://arcline.github.io/assets/og-banner.jpg" />
 ```
 
 ## 🎨 Studio Name
