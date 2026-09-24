@@ -1,35 +1,24 @@
 # Arcline — arcline.github.io
 
-Portfolio site for Rohan Tidke. Built with pure HTML, CSS & JS. Hosted on GitHub Pages.
+Portfolio of Rohan Tidke. Plain HTML, CSS and JS, hosted on GitHub Pages. No build step.
 
-## 🚀 Deploy in 5 Steps
+## Adding a project
 
-1. Go to github.com → New repository
-2. Name it exactly: `arcline.github.io`
-3. Upload all files (keep folder structure):
-   ```
-   index.html
-   style.css
-   script.js
-   assets/
-     favicon.svg
-     og-banner.jpg  ← add this from Canva (1200×630px)
-   ```
-4. Go to Settings → Pages → Source: `main` branch → `/root`
-5. Wait 60 seconds → visit `https://arcline.github.io`
+Copy one `<li>` inside `<ol class="rows">` in `index.html` and change:
 
-## 📱 WhatsApp OG Preview (Phase 4)
+- `href`: the live URL
+- `data-shot`: a short name used for the screenshot file (see below)
+- `data-note`: one line shown under the hover preview
+- the number, name, sector and address text
 
-Create `assets/og-banner.jpg` on Canva:
-- Size: 1200 × 630 px
-- Content: "Arcline · Web Developer · arcline.github.io"
-- Colors: #080808 background, #C8FF00 accent
+The "05 sites" count in the header updates itself.
 
-Then update this line in index.html:
-```html
-<meta property="og:image" content="https://arcline.github.io/assets/og-banner.jpg" />
-```
+## Screenshots
 
-## 🎨 Studio Name
+Hover previews first look for `assets/shots/<data-shot>.jpg` (1200×750, top of the live site).
+If that file is missing, the page asks a screenshot service for the live site. If that fails too,
+it shows a typographic tile.
 
-Currently set to **Arcline**. To change it, find & replace `Arcline` in index.html.
+## Deploy
+
+Settings → Pages → Source: `main` branch, `/root`.
