@@ -59,7 +59,7 @@
   targets.forEach(t => observer.observe(t));
 
 
-  /* ─── SCROLL PROGRESS ARC ─── */
+  /* ─── SCROLL PROGRESS: the logo's baseline fills ─── */
   const markFill = $('.nav__mark-fill');
   let progressQueued = false;
   const updateProgress = () => {
