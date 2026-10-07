@@ -42,15 +42,14 @@ with *reduce motion* switched on gets the finished state with no movement.
 
 ## Logo
 
-The pointer A: an A whose counter is a mouse pointer, its left leg still rendering in pixels (rough idea to
-finished work). In the full logo it is the first letter of the name, and "rcline" is drawn as one line that
-runs on as the baseline and ends in a dot. Files are in `assets/logo/`:
+"One Line": the name drawn as one thick geometric line, standing on a baseline that ends in a square wine dot
+(the dot on the i is square too). Square ends throughout. The symbol is the "a." on its line. Files are in
+`assets/logo/`:
 
 - `arcline-logo*.svg`: the full logo. `-dark-bg` for dark backgrounds, `-mono-dark` / `-mono-light` for one colour.
-- `arcline-logo-bold*.svg`: the icon with the name in Schibsted Grotesk, for small sizes where the line gets too thin.
-- `arcline-icon*.svg`: the icon alone. `arcline-icon-small*.svg` has bigger pixels for 32 px and below.
-- `favicon.svg`: the small icon on the dark band tile.
-- `png/`: 512 px icons, 1024 px social squares (dark and light), 2000 px logos on transparent backgrounds.
+- `arcline-symbol*.svg`: the "a." symbol, same variants. `arcline-symbol-tile.svg` puts it on the dark band tile.
+- `favicon.svg`: the symbol tile, sized for browser tabs.
+- `png/`: 512 px symbols, 1024 px social squares (dark and light), 2000 px logos on transparent backgrounds.
 
 The site itself (nav, favicon, hero arc) still uses the earlier arc mark.
 
