@@ -2,7 +2,7 @@
    - Mobile menu toggle
    - Highlight the nav link for the part of the page in view
    - Scroll progress on the nav logo's baseline, tinted by the work category in view
-   - Hero: the logo as the title, with a dot per work category
+   - Hero: the logo's "a." as the title, with a dot per work category
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
    - Live-site previews beside the cursor on project cards
@@ -231,7 +231,7 @@
 
 
   /* ─── THE MARK (hero) ───
-     The One Line logo as the page title, a square dot per work category as its full stop.
+     The logo's "a." as the page title, a square dot per work category as its full stop.
      Hover or focus a dot for its name and count; click to jump there. */
   const markBox = $('.hero__mark');
   const vb = $('svg', markBox).viewBox.baseVal;

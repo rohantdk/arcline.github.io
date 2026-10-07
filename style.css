@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    ARCLINE — Works 2026
-   Palette "Nashik Valley": aubergine ink, wine accent, vine green,
+   Palette "Vineyard": aubergine ink, wine accent, vine green,
    on a soft paper ground. Each work category carries its own colour
    (--c / --c-soft on light, --c-light on the aubergine bands).
    Schibsted Grotesk (headings) · DM Sans (body) · DM Mono (labels)
@@ -176,6 +176,7 @@ a { color: inherit; }
   color: var(--muted);
   margin-bottom: clamp(64px, 12vw, 140px);
 }
+.hero__meta span:last-child { margin-left: auto; }
 /* the name is the logo (in .hero__mark); the h1 keeps it for search and screen readers */
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
@@ -352,7 +353,7 @@ a { color: inherit; }
 }
 .contact__lead { color: var(--on-band); font-size: clamp(18px, 1.8vw, 21px); max-width: 30em; margin-bottom: clamp(48px, 6vw, 72px); }
 .contact__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   border-top: 1px solid rgba(255,255,255,0.18); padding-top: 24px;
 }
 .contact__grid dt {
@@ -403,11 +404,8 @@ kbd {
 /* ─── hero: letters ─── */
 
 /* ─── hero: the mark ─── */
-/* the One Line logo as the page title; its full stop is a square per work category */
-.hero__mark { position: relative; width: min(100%, 1000px); margin: 0 0 30px; color: var(--ink); }
-.mark--hero .mark__word path { fill: none; stroke: currentColor; }
-.mark__idot { fill: var(--accent); }
-.mark--hero .mark__halo { stroke-width: .6; }
+/* the logo's "a." as the page title; its full stop is a square per work category */
+.hero__mark { position: relative; width: min(100%, 560px); margin: 0 0 30px; }
 .mark { display: block; width: 100%; height: auto; overflow: visible; }
 .mark__a path { fill: none; stroke: var(--ink); stroke-width: 13; }
 
@@ -666,15 +664,13 @@ html:has(.palette[open]) { overflow: hidden; }
   }
   .js .reveal.is-in { opacity: 1; transform: none; }
 
-  /* hero mark: the name is revealed left to right, then the dots pop in */
+  /* hero mark: the line and the a draw themselves, then the dots pop in */
   .js .hero__mark.reveal { opacity: 1; transform: none; }
-  .js .hero__mark .mark__word { clip-path: inset(-30% 100% -30% -5%); transition: clip-path 1.5s var(--ease) .15s; }
-  .js .hero__mark.is-in .mark__word { clip-path: inset(-30% -5% -30% -5%); }
   .js .mark__a path { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease) var(--d, .3s); }
   .js .is-in .mark__a path { stroke-dashoffset: 0; }
   .js .hero__mark .mark__pop {
     transform-box: fill-box; transform-origin: center; transform: scale(0);
-    transition: transform .7s var(--spring) calc(1.3s + var(--i) * 85ms);
+    transition: transform .7s var(--spring) calc(1.15s + var(--i) * 85ms);
   }
   .js .hero__mark.is-in .mark__pop { transform: none; }
   .js .hero__mark.is-in .mark__halo { animation: halo 4.2s ease-in-out calc(2.4s + var(--i) * .6s) infinite; }
