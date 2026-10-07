@@ -2,7 +2,7 @@
    - Mobile menu toggle
    - Highlight the nav link for the part of the page in view
    - Scroll progress on the nav logo's baseline, tinted by the work category in view
-   - Hero: letter intro, the logo mark with a dot per work category
+   - Hero: the logo as the title, with a dot per work category
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
    - Live-site previews beside the cursor on project cards
@@ -117,24 +117,9 @@
   updateProgress();
 
 
-  /* ─── HERO TITLE: one span per letter ─── */
-  const title = $('.hero__title');
-  const word  = title.textContent.trim();
-  title.setAttribute('aria-label', word);
-  title.textContent = '';
-  [...word].forEach((ch, i) => {
-    const span = document.createElement('span');
-    span.className = 'hero__char';
-    span.setAttribute('aria-hidden', 'true');
-    span.style.setProperty('--i', i);
-    span.textContent = ch;
-    title.appendChild(span);
-  });
-
-
   /* ─── SCROLL REVEALS ─── */
   const heroDelays = new Map([
-    ['.hero .eyebrow', 0], ['.hero__title', 0], ['.hero__mark', 0],
+    ['.hero .eyebrow', 0], ['.hero__mark', 0],
     ['.hero__lead', 0.55], ['.hero__sub', 0.68], ['.hero__actions', 0.8],
   ]);
   heroDelays.forEach((d, sel) => {
@@ -246,10 +231,10 @@
 
 
   /* ─── THE MARK (hero) ───
-     The logo's "a." with a square dot per work category as its full stop.
+     The One Line logo as the page title, a square dot per work category as its full stop.
      Hover or focus a dot for its name and count; click to jump there. */
   const markBox = $('.hero__mark');
-  const VB_W = 520, VB_H = 320;
+  const vb = $('svg', markBox).viewBox.baseVal;
   const dots = $$('.mark__dot', markBox);
   const tip = $('.mark__tip', markBox);
 
@@ -277,9 +262,9 @@
     const b = document.createElement('b');
     b.textContent = info.n;
     tip.append(b, ` ${info.t} · ${info.c}`);
-    tip.style.left = (x / VB_W * 100) + '%';
-    tip.style.top  = (y / VB_H * 100) + '%';
-    tip.style.setProperty('--ax', (x / VB_W).toFixed(3));
+    tip.style.left = ((x - vb.x) / vb.width * 100) + '%';
+    tip.style.top  = ((y - vb.y) / vb.height * 100) + '%';
+    tip.style.setProperty('--ax', ((x - vb.x) / vb.width).toFixed(3));
     tip.classList.add('is-on');
   };
   const hideTip = () => tip.classList.remove('is-on');

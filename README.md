@@ -7,7 +7,7 @@ https://rohantdk.github.io/arcline.github.io/
 
 One page, in separate sections, following the 2026 works brochure:
 
-1. Hero, with the logo mark and a dot per work category
+1. Hero, with the logo as the title and a dot per work category
 2. Tools marquee
 3. Contents (dark band, links to each work category)
 4. About, with the four numbers
@@ -21,8 +21,9 @@ One page, in separate sections, following the 2026 works brochure:
 All in `script.js`, vanilla JavaScript with no libraries. Without JavaScript the page reads in full, and anyone
 with *reduce motion* switched on gets the finished state with no movement.
 
-- **The mark** (hero): the logo's "a." standing on the baseline of the word, with seven square dots as its full stop,
-  one per work category. The line and the "a" draw themselves in, then the dots pop in. Hover or focus a dot for the
+- **The title** (hero): the One Line logo, drawn large, with seven square dots as its full stop, one per work
+  category. The `h1` still holds the word "Arcline" (visually hidden) for search and screen readers. The logo is
+  revealed from left to right, then the dots pop in. Hover or focus a dot for the
   name and count, click to jump there. Names and counts are read from the Contents list, so there is nothing extra
   to update.
 - **Nav logo**: the logo's baseline fills from left to right as you scroll down the page. In the Work section the
@@ -39,7 +40,7 @@ with *reduce motion* switched on gets the finished state with no movement.
   client, city or stack. Category counts update and empty categories hide.
 - **Command palette**: `⌘K`, `Ctrl+K` or `/` (or the Search button) jumps to any section, project or contact action.
   It is built from the page, so new cards appear in it on their own.
-- **Small things**: letters of the title rise in and lift on hover, section rules draw in, mono labels decode
+- **Small things**: section rules draw in, mono labels decode
   from random glyphs, the stats count up, a line draws across each Process step in turn, the dot on "live" chips
   pulses, cards light up under the pointer, buttons lean toward the cursor, and the email has a copy button.
 
