@@ -176,11 +176,10 @@ a { color: inherit; }
   color: var(--muted);
   margin-bottom: clamp(64px, 12vw, 140px);
 }
-.hero__title {
-  font-family: var(--display); font-weight: 800;
-  font-size: clamp(84px, 17vw, 210px);
-  line-height: 0.86; letter-spacing: -0.055em;
-  margin: 0 0 28px -0.04em;
+/* the name is the logo (in .hero__mark); the h1 keeps it for search and screen readers */
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
 .hero__lead {
   font-family: var(--display); font-weight: 600;
@@ -403,21 +402,12 @@ kbd {
 
 /* ─── hero: letters ─── */
 
-.hero__char { display: inline-block; transition: transform .5s var(--ease), color .3s; }
-@media (hover: hover) and (pointer: fine) {
-  .hero__char:hover { transform: translateY(-0.07em); color: var(--accent); }
-  .hero__char:hover + .hero__char,
-  .hero__char:has(+ .hero__char:hover) { transform: translateY(-0.03em); }
-}
-
 /* ─── hero: the mark ─── */
-/* the logo's "a." with the seven work categories as its full stop,
-   sized and placed to stand on the word's baseline */
-.hero__mark {
-  position: absolute; z-index: 2; pointer-events: none;
-  top: min(calc(46px + 10.2vw), 172px); right: var(--gutter);
-  width: min(27vw, 334px);
-}
+/* the One Line logo as the page title; its full stop is a square per work category */
+.hero__mark { position: relative; width: min(100%, 1000px); margin: 0 0 30px; color: var(--ink); }
+.mark--hero .mark__word path { fill: none; stroke: currentColor; }
+.mark__idot { fill: var(--accent); }
+.mark--hero .mark__halo { stroke-width: .6; }
 .mark { display: block; width: 100%; height: auto; overflow: visible; }
 .mark__a path { fill: none; stroke: var(--ink); stroke-width: 13; }
 
@@ -676,21 +666,15 @@ html:has(.palette[open]) { overflow: hidden; }
   }
   .js .reveal.is-in { opacity: 1; transform: none; }
 
-  /* hero title: the word stays put, its letters rise one by one */
-  .js .hero__title.reveal { opacity: 1; transform: none; }
-  .js .hero__title:not(.is-in) .hero__char { opacity: 0; }
-  .js .hero__title.is-in .hero__char {
-    animation: char-rise 1s var(--ease) backwards;
-    animation-delay: calc(.12s + var(--i) * 60ms);
-  }
-
-  /* hero mark: the line and the a draw themselves, then the dots pop in */
+  /* hero mark: the name is revealed left to right, then the dots pop in */
   .js .hero__mark.reveal { opacity: 1; transform: none; }
+  .js .hero__mark .mark__word { clip-path: inset(-30% 100% -30% -5%); transition: clip-path 1.5s var(--ease) .15s; }
+  .js .hero__mark.is-in .mark__word { clip-path: inset(-30% -5% -30% -5%); }
   .js .mark__a path { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease) var(--d, .3s); }
   .js .is-in .mark__a path { stroke-dashoffset: 0; }
   .js .hero__mark .mark__pop {
     transform-box: fill-box; transform-origin: center; transform: scale(0);
-    transition: transform .7s var(--spring) calc(1.15s + var(--i) * 85ms);
+    transition: transform .7s var(--spring) calc(1.3s + var(--i) * 85ms);
   }
   .js .hero__mark.is-in .mark__pop { transform: none; }
   .js .hero__mark.is-in .mark__halo { animation: halo 4.2s ease-in-out calc(2.4s + var(--i) * .6s) infinite; }
@@ -732,8 +716,6 @@ html:has(.palette[open]) { overflow: hidden; }
   .nav__search kbd { display: none; }
 
   .hero__meta { margin-bottom: 20px; }
-  /* the a stands low in its box: pull the box up so no empty band sits above it */
-  .hero__mark { position: relative; top: auto; right: auto; width: min(82%, 340px); margin: calc(min(82%, 340px) * -0.21) 0 18px auto; }
   .mark__tip { font-size: 11px; }
 
   .filter__search { max-width: none; }
@@ -782,5 +764,5 @@ html:has(.palette[open]) { overflow: hidden; }
 
 @media print {
   .reveal { opacity: 1 !important; transform: none !important; }
-  .nav, .hero__mark, .contact__mark, .marquee, .filter, .palette, .toast, .copy, .peek { display: none !important; }
+  .nav, .mark__dots, .contact__mark, .marquee, .filter, .palette, .toast, .copy, .peek { display: none !important; }
 }
