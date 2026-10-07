@@ -20,6 +20,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!document.documentElement.classList.contains('motion')) document.documentElement.classList.remove('js'); }, 2500);
+  </script>
 </head>
 <body>
 
@@ -28,12 +32,13 @@
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
-      <a class="nav__logo" href="#top">Arcline</a>
+      <a class="nav__logo" href="#top"><svg class="nav__mark" viewBox="0 0 32 20" aria-hidden="true"><path class="nav__mark-track" d="M4 17 A12 12 0 0 1 28 17" /><path class="nav__mark-fill" d="M4 17 A12 12 0 0 1 28 17" pathLength="1" /></svg>Arcline</a>
       <nav class="nav__links" id="navLinks" aria-label="Main">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#process">Process</a>
+        <button class="nav__search" type="button" data-palette-open hidden><span>Search</span><kbd data-kbd>⌘K</kbd></button>
         <a class="nav__cta" href="#contact">Start a project</a>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
@@ -47,7 +52,30 @@
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
-        <p class="hero__meta"><span>Nashik, India</span><span>Works 2026</span></p>
+        <p class="hero__meta"><span>Nashik, India <span class="hero__clock" data-clock hidden></span></span><span>Works 2026</span></p>
+
+        <div class="hero__arc">
+          <svg class="arc" viewBox="0 0 520 320" role="group" aria-label="The seven categories of work">
+            <path class="arc__ticks" d="M0 294 H520" />
+            <path class="arc__ground" d="M0 290 H520" />
+            <text class="arc__coord" x="30" y="314">19.99° N</text>
+            <text class="arc__coord" x="490" y="314" text-anchor="end">73.79° E</text>
+            <path class="arc__line arc__line--echo3" pathLength="1" style="--d:.75s" d="M108 290 C108 87.5 412 87.5 412 290" />
+            <path class="arc__line arc__line--echo2" pathLength="1" style="--d:.6s" d="M82 290 C82 55 438 55 438 290" />
+            <path class="arc__line arc__line--echo1" pathLength="1" style="--d:.45s" d="M56 290 C56 22.5 464 22.5 464 290" />
+            <path class="arc__line arc__line--main" pathLength="1" style="--d:.25s" d="M30 290 C30 -10 490 -10 490 290" />
+            <g class="arc__dots">
+              <a class="arc__dot" href="#web" data-cat="web" style="--i:0"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#shop" data-cat="shop" style="--i:1"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#ai" data-cat="ai" style="--i:2"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#apps" data-cat="apps" style="--i:3"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#platforms" data-cat="platforms" style="--i:4"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#brand" data-cat="brand" style="--i:5"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+              <a class="arc__dot" href="#studio" data-cat="studio" style="--i:6"><circle class="arc__hit" r="22" /><g class="arc__pop"><circle class="arc__halo" r="17" /><circle class="arc__core" r="9" /></g></a>
+            </g>
+          </svg>
+          <p class="arc__tip" aria-hidden="true"></p>
+        </div>
         <p class="eyebrow">Portfolio of works</p>
         <h1 class="hero__title">Arcline</h1>
         <p class="hero__lead">The web and AI studio of Rohan Tidke</p>
@@ -59,6 +87,34 @@
         </div>
       </div>
     </section>
+
+    <!-- TOOLS MARQUEE -->
+    <div class="marquee" role="region" aria-label="Tools I build with">
+      <div class="marquee__track">
+        <ul class="marquee__list">
+          <li data-cat="web">HTML · CSS · JavaScript</li>
+          <li data-cat="shop">Shopify Liquid</li>
+          <li data-cat="ai">FastAPI</li>
+          <li data-cat="platforms">Next.js</li>
+          <li data-cat="apps">React Native</li>
+          <li data-cat="ai">Gemini</li>
+          <li data-cat="ai">Claude</li>
+          <li data-cat="platforms">Supabase</li>
+          <li data-cat="shop">Razorpay</li>
+          <li data-cat="apps">Expo</li>
+          <li data-cat="ai">Whisper</li>
+          <li data-cat="ai">Ollama</li>
+          <li data-cat="apps">Make.com</li>
+          <li data-cat="apps">MongoDB</li>
+          <li data-cat="platforms">GSAP</li>
+          <li data-cat="brand">Figma</li>
+          <li data-cat="brand">Illustrator</li>
+          <li data-cat="web">Netlify</li>
+          <li data-cat="studio">Python</li>
+          <li data-cat="studio">Claude Code</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- CONTENTS -->
     <section class="contents" aria-labelledby="contents-title">
@@ -119,6 +175,27 @@
         <div class="work__intro">
           <p class="eyebrow">Selected work</p>
           <h2 class="block__title">Thirty-two projects, seven categories.</h2>
+
+          <div class="filter" role="search" aria-label="Filter projects" hidden>
+            <div class="filter__status" role="group" aria-label="Status">
+              <button class="filter__pill" type="button" data-status="all" aria-pressed="true">All</button>
+              <button class="filter__pill" type="button" data-status="done" aria-pressed="false">Live and delivered</button>
+              <button class="filter__pill" type="button" data-status="open" aria-pressed="false">In progress</button>
+            </div>
+            <label class="filter__search">
+              <span class="sr">Search projects by name or stack</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="M13 13l4 4" /></svg>
+              <input id="filterInput" type="search" placeholder="Search by name or stack" autocomplete="off" spellcheck="false" />
+            </label>
+            <p class="filter__count" aria-live="polite"><strong>32</strong> of 32 projects</p>
+            <p class="filter__try">Try
+              <button type="button" data-q="Supabase">Supabase</button>
+              <button type="button" data-q="Shopify">Shopify</button>
+              <button type="button" data-q="FastAPI">FastAPI</button>
+              <button type="button" data-q="Gemini">Gemini</button>
+              <button type="button" data-q="Marathi">Marathi</button>
+            </p>
+          </div>
         </div>
 
     <section class="cat" id="web" data-cat="web" aria-labelledby="web-title">
@@ -424,6 +501,8 @@
         </article>
       </div>
     </section>
+
+        <p class="filter__empty" hidden>Nothing matches that yet. <button type="button" data-filter-clear>Clear the filter</button></p>
       </div>
     </div>
 
@@ -448,7 +527,7 @@
         <h2 class="contact__title" id="contact-title">Start a project.</h2>
         <p class="contact__lead">Tell me what you need built. I reply with a written scope and a fixed quotation.</p>
         <dl class="contact__grid">
-          <div><dt>Email</dt><dd><a href="mailto:tidkerohan8228@gmail.com">tidkerohan8228@gmail.com</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:tidkerohan8228@gmail.com">tidkerohan8228@gmail.com</a> <button class="copy" type="button" data-copy="tidkerohan8228@gmail.com" hidden>Copy</button></dd></div>
           <div><dt>WhatsApp</dt><dd><a href="https://wa.me/918857852631" target="_blank" rel="noopener noreferrer">Message me</a></dd></div>
           <div><dt>GitHub</dt><dd><a href="https://github.com/rohantdk" target="_blank" rel="noopener noreferrer">rohantdk</a></dd></div>
           <div><dt>Studio</dt><dd>Arcline · Nashik, Maharashtra, India</dd></div>
@@ -457,6 +536,20 @@
     </section>
 
   </main>
+
+  <!-- COMMAND PALETTE (⌘K, Ctrl+K or /) -->
+  <dialog class="palette" id="palette" aria-label="Jump to">
+    <div class="palette__box">
+      <div class="palette__field">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="M13 13l4 4" /></svg>
+        <input id="paletteInput" type="text" placeholder="Jump to a project, section or contact" autocomplete="off" spellcheck="false"
+               role="combobox" aria-expanded="true" aria-controls="paletteList" aria-autocomplete="list" />
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="palette__list" id="paletteList" role="listbox" aria-label="Results"></ul>
+      <p class="palette__foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span></p>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
