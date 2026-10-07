@@ -410,48 +410,43 @@ kbd {
   .hero__char:has(+ .hero__char:hover) { transform: translateY(-0.03em); }
 }
 
-/* ─── hero: the arc ─── */
-/* sized and placed to sit right of the word, standing on its baseline */
-.hero__arc {
+/* ─── hero: the mark ─── */
+/* the logo's "a." with the seven work categories as its full stop,
+   sized and placed to stand on the word's baseline */
+.hero__mark {
   position: absolute; z-index: 2; pointer-events: none;
   top: min(calc(46px + 10.2vw), 172px); right: var(--gutter);
   width: min(27vw, 334px);
 }
-.arc { display: block; width: 100%; height: auto; overflow: visible; }
-.arc__line { fill: none; stroke: var(--accent); stroke-linecap: round; }
-.arc__line--main  { stroke-width: 9; }
-.arc__line--echo1 { stroke-width: 1.5; opacity: .45; }
-.arc__line--echo2 { stroke-width: 1.5; opacity: .28; }
-.arc__line--echo3 { stroke-width: 1.5; opacity: .16; }
-.arc__ground { stroke: var(--ink); stroke-width: 1; }
-.arc__ticks { stroke: var(--muted); stroke-width: 7; stroke-dasharray: 1 19; opacity: .45; }
+.mark { display: block; width: 100%; height: auto; overflow: visible; }
+.mark__a path { fill: none; stroke: var(--ink); stroke-width: 13; }
 
-.arc__dot { cursor: pointer; outline: none; pointer-events: auto; }
-.arc__hit { fill: transparent; }
-.arc__core {
-  fill: var(--c); stroke: var(--paper); stroke-width: 3;
+.mark__dot { cursor: pointer; outline: none; pointer-events: auto; }
+.mark__hit { fill: transparent; }
+.mark__core {
+  fill: var(--c);
   transform-box: fill-box; transform-origin: center;
   transition: transform .4s var(--spring);
 }
-.arc__halo {
+.mark__halo {
   fill: var(--c); fill-opacity: .14; stroke: var(--c); stroke-width: 1.5;
   transform-box: fill-box; transform-origin: center;
   opacity: 0; transform: scale(.5);
   transition: opacity .3s, transform .45s var(--spring);
 }
-.arc__dot:hover .arc__core, .arc__dot:focus-visible .arc__core { transform: scale(1.3); }
-.arc__dot:hover .arc__halo, .arc__dot:focus-visible .arc__halo { opacity: 1; transform: none; animation: none; }
+.mark__dot:hover .mark__core, .mark__dot:focus-visible .mark__core { transform: scale(1.25); }
+.mark__dot:hover .mark__halo, .mark__dot:focus-visible .mark__halo { opacity: 1; transform: none; animation: none; }
 
-.arc__tip {
+.mark__tip {
   position: absolute; left: 0; top: 0; z-index: 3;
   pointer-events: none; white-space: nowrap;
   font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
   background: var(--ink); color: #fff; padding: 7px 11px;
   opacity: 0; transition: opacity .2s;
-  transform: translate(calc(var(--ax, .5) * -100%), calc(-100% - 22px));
+  transform: translate(calc(var(--ax, .5) * -100%), calc(-100% - 26px));
 }
-.arc__tip.is-on { opacity: 1; }
-.arc__tip b { font-weight: 400; color: var(--c-light); margin-right: 4px; }
+.mark__tip.is-on { opacity: 1; }
+.mark__tip b { font-weight: 400; color: var(--c-light); margin-right: 4px; }
 
 /* ─── tools marquee ─── */
 .marquee {
@@ -533,20 +528,17 @@ kbd {
   background: var(--accent); transform: scaleX(0); transform-origin: left;
 }
 
-/* ─── the arc again, in contact ─── */
-.contact__arc {
+/* ─── the mark again, in contact ─── */
+.contact__mark {
   --w: 230px;
   width: var(--w); pointer-events: none;
   /* stands on the contact grid's top rule without adding height */
   margin: calc(var(--w) * -0.5577) 0 calc(var(--w) * -0.0577) auto;
 }
-.arc--band .arc__line { stroke: var(--accent-light); }
-.arc--band .arc__line--main { stroke-width: 10; }
-.arc--band .arc__ground { stroke: rgba(255,255,255,0.18); }
-.arc--band .arc__ticks { stroke: var(--on-band); opacity: .35; }
-.arc__traveller .arc__core { fill: #fff; stroke: var(--band); stroke-width: 4; }
-.arc__traveller .arc__halo { fill: var(--accent-light); fill-opacity: .2; stroke: var(--accent-light); }
-.contact__arc.is-landed .arc__halo { animation: halo 4.2s ease-in-out .2s infinite; }
+.mark--band .mark__a path { stroke: var(--paper); }
+.mark__traveller .mark__core { fill: var(--accent-light); }
+.mark__traveller .mark__halo { fill: var(--accent-light); fill-opacity: .2; stroke: var(--accent-light); }
+.contact__mark.is-landed .mark__halo { animation: halo 4.2s ease-in-out .2s infinite; }
 
 /* ─── live-site previews ─── */
 .peek { position: fixed; left: 0; top: 0; z-index: 250; width: 320px; pointer-events: none; will-change: transform; }
@@ -692,19 +684,16 @@ html:has(.palette[open]) { overflow: hidden; }
     animation-delay: calc(.12s + var(--i) * 60ms);
   }
 
-  /* hero arc: lines draw themselves, then the dots pop in */
-  .js .hero__arc.reveal { opacity: 1; transform: none; }
-  .js .hero__arc .arc__line { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease) var(--d, .3s); }
-  .js .hero__arc.is-in .arc__line { stroke-dashoffset: 0; }
-  .js .hero__arc .arc__ground, .js .hero__arc .arc__ticks { opacity: 0; transition: opacity 1s ease .2s; }
-  .js .hero__arc.is-in .arc__ground { opacity: 1; }
-  .js .hero__arc.is-in .arc__ticks { opacity: .45; }
-  .js .hero__arc .arc__pop {
+  /* hero mark: the line and the a draw themselves, then the dots pop in */
+  .js .hero__mark.reveal { opacity: 1; transform: none; }
+  .js .mark__a path { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease) var(--d, .3s); }
+  .js .is-in .mark__a path { stroke-dashoffset: 0; }
+  .js .hero__mark .mark__pop {
     transform-box: fill-box; transform-origin: center; transform: scale(0);
     transition: transform .7s var(--spring) calc(1.15s + var(--i) * 85ms);
   }
-  .js .hero__arc.is-in .arc__pop { transform: none; }
-  .js .hero__arc.is-in .arc__halo { animation: halo 4.2s ease-in-out calc(2.4s + var(--i) * .6s) infinite; }
+  .js .hero__mark.is-in .mark__pop { transform: none; }
+  .js .hero__mark.is-in .mark__halo { animation: halo 4.2s ease-in-out calc(2.4s + var(--i) * .6s) infinite; }
 
   /* section and category rules draw from left to right */
   .js .block__title.reveal, .js .cat__head.reveal { border-bottom-color: transparent; position: relative; }
@@ -720,13 +709,9 @@ html:has(.palette[open]) { overflow: hidden; }
   .js .steps li.reveal::before { transition: transform 1.1s var(--ease) calc(var(--d, 0s) + .15s); }
   .js .steps li.is-in::before { transform: none; }
 
-  .js .contact__arc.reveal { opacity: 1; transform: none; }
-  .js .contact__arc .arc__line { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease) var(--d, .3s); }
-  .js .contact__arc.is-in .arc__line { stroke-dashoffset: 0; }
-  .js .contact__arc .arc__ground, .js .contact__arc .arc__ticks, .js .contact__arc .arc__traveller { opacity: 0; transition: opacity .8s ease .2s; }
-  .js .contact__arc.is-in .arc__ground, .js .contact__arc.is-in .arc__traveller { opacity: 1; }
-  .js .contact__arc.is-in .arc__ticks { opacity: .35; }
-  .js .contact__arc .arc__traveller { transition-delay: .9s; }
+  .js .contact__mark.reveal { opacity: 1; transform: none; }
+  .js .contact__mark .mark__traveller { opacity: 0; transition: opacity .8s ease .9s; }
+  .js .contact__mark.is-in .mark__traveller { opacity: 1; }
 }
 
 @keyframes char-rise { from { opacity: 0; transform: translateY(.3em) rotate(5deg); } }
@@ -747,11 +732,12 @@ html:has(.palette[open]) { overflow: hidden; }
   .nav__search kbd { display: none; }
 
   .hero__meta { margin-bottom: 20px; }
-  .hero__arc { position: relative; top: auto; right: auto; width: min(82%, 340px); margin: 0 0 18px auto; }
-  .arc__tip { font-size: 11px; }
+  /* the a stands low in its box: pull the box up so no empty band sits above it */
+  .hero__mark { position: relative; top: auto; right: auto; width: min(82%, 340px); margin: calc(min(82%, 340px) * -0.21) 0 18px auto; }
+  .mark__tip { font-size: 11px; }
 
   .filter__search { max-width: none; }
-  .contact__arc { --w: 190px; margin-top: 0; }
+  .contact__mark { --w: 190px; margin-top: 0; }
   .filter__count { margin-left: 0; width: 100%; }
   .palette { margin-top: 8vh; }
   .palette__hint { display: none; }
@@ -796,5 +782,5 @@ html:has(.palette[open]) { overflow: hidden; }
 
 @media print {
   .reveal { opacity: 1 !important; transform: none !important; }
-  .nav, .hero__arc, .contact__arc, .marquee, .filter, .palette, .toast, .copy, .peek { display: none !important; }
+  .nav, .hero__mark, .contact__mark, .marquee, .filter, .palette, .toast, .copy, .peek { display: none !important; }
 }
