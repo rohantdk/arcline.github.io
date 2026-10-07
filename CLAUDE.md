@@ -31,10 +31,12 @@ changes go live, and decisions already made.
 1. Work on the session's feature branch. After a merge, restart it from the latest `main`.
 2. Check it in Chromium with Playwright (pre-installed). Test desktop (1360px), phone (390px) and
    `reducedMotion: 'reduce'`. Look for console errors and horizontal overflow (`scrollWidth` must equal the
-   viewport width).
+   viewport width). Playwright is the Node package, not Python: serve the folder with `python3 -m http.server`,
+   write the test script in the scratchpad and run it with `NODE_PATH=/opt/node22/lib/node_modules node`.
 3. Open a pull request against `main` and squash-merge it, but only when the owner asks for it to go live.
 4. Confirm the "pages build and deployment" workflow run for the merge commit finished with `success`.
    The cloud environment's network blocks `*.github.io`, so check the workflow run, not the live page.
+   It sits in `queued` for a while and usually finishes within a minute or two.
 5. Tell the owner to hard-reload (Ctrl+Shift+R / Cmd+Shift+R): Pages caches files for about 10 minutes.
 
 ## Live-site preview screenshots
@@ -43,6 +45,19 @@ Client sites are blocked by the environment's network policy, so `curl` and Play
 Context web-scrape tool can: `formats.screenshot`, `area: "viewport"`, viewport 1280 × 800, `dismissCookies`
 and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) into
 `assets/previews/<name>.webp`, then add `data-peek` to the card's link. Check each screenshot before using it.
+
+## How the cards work (gotchas)
+
+- A card's `card__link` is stretched over the whole card with `::after` (`style.css`). It must stay the only
+  link or button in a card; anything else clickable added to a card would sit under it and needs
+  `position: relative; z-index: 1`.
+- Because the link covers the card, its `pointerenter` fires anywhere on the card. The preview's "instant on
+  the link" check therefore tests the pointer against the link text's `getBoundingClientRect()`.
+- In Playwright, `locator.click()` on text inside a linked card times out ("card__link intercepts pointer
+  events"). That's expected; click with `page.mouse.click` / `page.touchscreen.tap` at coordinates instead.
+  The new tab it opens shows `chrome-error://` because client sites are blocked here; that still counts.
+- `flash()` in `script.js` is shared by the unlinked-card click and the command palette. Under reduced motion
+  CSS turns animations off, so don't add the `is-flash` class then (`animationend` would never fire).
 
 ## Decisions so far
 
