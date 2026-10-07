@@ -29,6 +29,8 @@ with *reduce motion* switched on gets the finished state with no movement.
 - **Live-site previews**: hovering a project card that has a live site shows its homepage in a small browser frame
   beside the cursor, after a quarter-second pause (at once on the link itself; mouse and trackpad only). To add one, save a 640 × 400 px screenshot to `assets/previews/<name>.webp` and add
   `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
+- **Whole-card links**: a card's `card__link` is stretched over the card (in `style.css`), so a click or tap
+  anywhere on it opens the site. Cards without a link light up briefly when clicked instead.
 - **The arc again** (contact): it draws itself on the contact rule, and a dot travels from its foot to its top.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
   Edit the list in `index.html`; `data-cat` sets each dot's colour.
