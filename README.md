@@ -8,7 +8,7 @@ https://rohantdk.github.io/arcline.github.io/
 One page, in separate sections, following the 2026 works brochure:
 
 1. Hero
-2. Contents (navy band, links to each work category)
+2. Contents (dark band, links to each work category)
 3. About, with the four numbers
 4. Services
 5. Work, in seven categories: `#web`, `#shop`, `#ai`, `#apps`, `#platforms`, `#brand`, `#studio`
@@ -17,9 +17,11 @@ One page, in separate sections, following the 2026 works brochure:
 
 ## Colours
 
-Defined as tokens at the top of `style.css`: navy `#0F1733`, indigo `#3D3DC8`, lavender `#ECEEFB`.
-Each work category has a strong and a soft colour (`--web` / `--web-soft`, and so on). Any element with
-`data-cat="…"` picks up its category's colours as `--c` and `--c-soft`.
+Palette "Nashik Valley", defined as tokens at the top of `style.css`: aubergine ink `#22162A`,
+wine accent `#7B2346`, vine green `#4E7428`, paper `#F6F5F2`, and the dark band `#2B1631`.
+Each work category has a strong, a soft and a light colour (`--web`, `--web-soft`, `--web-light`, and so on).
+Any element with `data-cat="…"` picks them up as `--c` (text and marks on light), `--c-soft` (chip and
+highlight backgrounds) and `--c-light` (marks on the dark bands).
 
 ## Adding a project
 
