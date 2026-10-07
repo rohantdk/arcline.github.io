@@ -23,7 +23,7 @@ changes go live, and decisions already made.
   3. Pointer-only effects (hover, cursor-follow) check `(hover: hover) and (pointer: fine)` or
      `pointerType === 'mouse'`, so phones get nothing broken.
 - Category colours come from `data-cat="…"` (`--c`, `--c-soft`, `--c-light`); reuse them, don't hard-code.
-- Things like the arc dot labels and the palette's project list are read from the page (Contents list, cards),
+- Things like the hero dots' labels and the palette's project list are read from the page (Contents list, cards),
   so new cards appear in them automatically. Keep it that way; don't duplicate data in `script.js`.
 
 ## Making a change live
@@ -63,7 +63,7 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 
 - Kept: the magnetic buttons (hero buttons and nav "Start a project" lean toward the cursor). The owner wanted
   to try them; don't remove without asking.
-- Removed at the owner's request: the live IST clock in the hero, the Nashik coordinates under the arc, and
+- Removed at the owner's request: the live IST clock in the hero, the Nashik coordinates under the old hero arc, and
   the degree line in About. Don't bring them back.
 - Kept: the four stats in About (32, 14, 5, 2).
 - Live-site previews show on hover anywhere on a card with a live site, after a 250 ms pause (instantly on the
@@ -76,8 +76,9 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
 - Logo (October 2026): "One Line" in a tough weight (thick stroke, square ends, square wine dots), chosen after
-  ten concepts. It replaced the arc in the nav and favicon; the hero and contact arcs stay as a motif. Files and
-  variants are in `assets/logo/`.
+  ten concepts. It replaced the arc in the nav, the favicon, the hero (the "a." with a dot per category, still
+  links with hover labels) and Contact. The arc's lean toward the cursor went with it. Files and variants are in
+  `assets/logo/`; the share image is `assets/og-banner.jpg`.
 
 ## Working with the owner
 

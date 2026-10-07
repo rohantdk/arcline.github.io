@@ -1,13 +1,13 @@
 /* Arcline
    - Mobile menu toggle
    - Highlight the nav link for the part of the page in view
-   - Scroll progress arc in the nav logo, tinted by the work category in view
-   - Hero: letter intro, the interactive arc
+   - Scroll progress on the nav logo's baseline, tinted by the work category in view
+   - Hero: letter intro, the logo mark with a dot per work category
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
    - Live-site previews beside the cursor on project cards
    - Cards without a link light up when clicked
-   - The arc again in Contact, with a dot that travels to its top
+   - The mark again in Contact, with a dot that slides along its line
    - Project filter (status + search by name or stack)
    - Command palette (⌘K, Ctrl+K or /)
    - Copy email
@@ -134,7 +134,7 @@
 
   /* ─── SCROLL REVEALS ─── */
   const heroDelays = new Map([
-    ['.hero .eyebrow', 0], ['.hero__title', 0], ['.hero__arc', 0],
+    ['.hero .eyebrow', 0], ['.hero__title', 0], ['.hero__mark', 0],
     ['.hero__lead', 0.55], ['.hero__sub', 0.68], ['.hero__actions', 0.8],
   ]);
   heroDelays.forEach((d, sel) => {
@@ -143,7 +143,7 @@
     el.style.setProperty('--d', d + 's');
   });
 
-  $$('.block .eyebrow, .work__intro .eyebrow, .block__title, .about__text p, .cat__head, .contents .label, .contact .eyebrow, .contact__title, .contact__lead, .contact__arc')
+  $$('.block .eyebrow, .work__intro .eyebrow, .block__title, .about__text p, .cat__head, .contents .label, .contact .eyebrow, .contact__title, .contact__lead, .contact__mark')
     .forEach(el => el.classList.add('reveal'));
 
   // groups whose children come in one after another
@@ -164,7 +164,7 @@
     if (el.parentElement.classList.contains('stats')) countUp(el);
     if (el.matches('.eyebrow, .label')) decode(el);
     if (el.matches('.cat__head')) decode($('.cat__index', el));
-    if (el.matches('.contact__arc')) travel(el);
+    if (el.matches('.contact__mark')) travel(el);
   };
 
   const revealIO = new IntersectionObserver((entries) => {
@@ -245,20 +245,13 @@
   });
 
 
-  /* ─── THE ARC (hero) ───
-     Four nested arcs; the outer one carries a dot per work category.
-     The arcs lean toward the pointer, each with a little more lag than
-     the last, and sway on their own when the pointer is elsewhere. */
-  const arcBox = $('.hero__arc');
-  const arcSvg = $('.arc', arcBox);
-  const VB_W = 520, VB_H = 320, FOOT = 290;
-  const arcLines = ['main', 'echo1', 'echo2', 'echo3'].map(k => $('.arc__line--' + k, arcSvg));
-  const arcInset = [0, 26, 52, 78];
-  const arcEase  = [0.085, 0.065, 0.05, 0.038];
-  const arcState = arcLines.map(() => ({ x: 0, y: 0 }));
-  const dots = $$('.arc__dot', arcSvg);
-  const dotPos = dots.map(() => [0, 0]);
-  const tip = $('.arc__tip', arcBox);
+  /* ─── THE MARK (hero) ───
+     The logo's "a." with a square dot per work category as its full stop.
+     Hover or focus a dot for its name and count; click to jump there. */
+  const markBox = $('.hero__mark');
+  const VB_W = 520, VB_H = 320;
+  const dots = $$('.mark__dot', markBox);
+  const tip = $('.mark__tip', markBox);
 
   // category name and count, read from the Contents list so nothing is written twice
   const catInfo = {};
@@ -275,108 +268,45 @@
     if (info) dot.setAttribute('aria-label', `${info.n} ${info.t}, ${info.c}`);
   });
 
-  const geom = (inset, ox, oy) => {
-    const x0 = 30 + inset, x1 = 490 - inset, top = -10 + inset * 1.25;
-    return [x0, FOOT, x0 + ox, top + oy, x1 + ox, top + oy, x1, FOOT];
-  };
-  const pathOf = (g) => `M${g[0]} ${g[1]} C${g[2].toFixed(1)} ${g[3].toFixed(1)} ${g[4].toFixed(1)} ${g[5].toFixed(1)} ${g[6]} ${g[7]}`;
-  const bez = (g, t) => {
-    const u = 1 - t, a = u * u * u, b = 3 * u * u * t, c = 3 * u * t * t, d = t * t * t;
-    return [a * g[0] + b * g[2] + c * g[4] + d * g[6], a * g[1] + b * g[3] + c * g[5] + d * g[7]];
-  };
-
-  let pointer = null;        // [-1..1, -1..1] relative to the arc, or null
-  let activeDot = -1;
-
-  const placeTip = () => {
-    if (activeDot < 0) return;
-    const [x, y] = dotPos[activeDot];
-    tip.style.left = (x / VB_W * 100) + '%';
-    tip.style.top  = (y / VB_H * 100) + '%';
-    tip.style.setProperty('--ax', (x / VB_W).toFixed(3));
-  };
-
-  const drawArc = (t, idle) => {
-    const tx = pointer ? pointer[0] * 80 : idle ? Math.sin(t * 0.00055) * 18 : 0;
-    const ty = pointer ? pointer[1] * 60 : idle ? Math.cos(t * 0.0004) * 8 : 0;
-    arcState.forEach((s, i) => {
-      s.x = idle ? lerp(s.x, tx, arcEase[i]) : tx;
-      s.y = idle ? lerp(s.y, ty, arcEase[i]) : ty;
-      arcLines[i].setAttribute('d', pathOf(geom(arcInset[i], s.x, s.y)));
-    });
-    const g = geom(0, arcState[0].x, arcState[0].y);
-    dots.forEach((dot, i) => {
-      const drift = idle ? Math.sin(t * 0.0009 + i * 1.7) * 0.012 : 0;
-      const [x, y] = bez(g, 0.1 + i * (0.8 / 6) + drift);
-      dotPos[i] = [x, y];
-      dot.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
-    });
-    placeTip();
-  };
-
-  const showTip = (i) => {
-    activeDot = i;
-    const href = dots[i].getAttribute('href');
-    const info = catInfo[href];
-    tip.dataset.cat = dots[i].dataset.cat;
+  const showTip = (dot) => {
+    const info = catInfo[dot.getAttribute('href')];
+    if (!info) return;
+    const [x, y] = dot.getAttribute('transform').match(/[\d.]+/g).map(Number);
+    tip.dataset.cat = dot.dataset.cat;
     tip.innerHTML = '';
     const b = document.createElement('b');
     b.textContent = info.n;
     tip.append(b, ` ${info.t} · ${info.c}`);
+    tip.style.left = (x / VB_W * 100) + '%';
+    tip.style.top  = (y / VB_H * 100) + '%';
+    tip.style.setProperty('--ax', (x / VB_W).toFixed(3));
     tip.classList.add('is-on');
-    placeTip();
   };
-  const hideTip = () => { activeDot = -1; tip.classList.remove('is-on'); };
+  const hideTip = () => tip.classList.remove('is-on');
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('pointerenter', () => showTip(i));
-    dot.addEventListener('focus', () => showTip(i));
+  dots.forEach(dot => {
+    dot.addEventListener('pointerenter', () => showTip(dot));
+    dot.addEventListener('focus', () => showTip(dot));
     dot.addEventListener('pointerleave', hideTip);
     dot.addEventListener('blur', hideTip);
   });
 
-  if (reduce) {
-    drawArc(0, false);
-  } else {
-    const hero = $('.hero');
-    hero.addEventListener('pointermove', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      const r = arcSvg.getBoundingClientRect();
-      pointer = [
-        clamp((e.clientX - (r.left + r.width / 2)) / (r.width * 0.9), -1, 1),
-        clamp((e.clientY - (r.top + r.height * 0.45)) / r.height, -1, 1),
-      ];
-    });
-    hero.addEventListener('pointerleave', () => { pointer = null; });
 
-    let raf = 0;
-    // hold still while a dot is pointed at, so it never slides out from under the cursor
-    const loop = (t) => { if (activeDot < 0) drawArc(t, true); raf = requestAnimationFrame(loop); };
-    new IntersectionObserver(([entry]) => {
-      cancelAnimationFrame(raf);
-      if (entry.isIntersecting) raf = requestAnimationFrame(loop);
-    }).observe(arcBox);
-    drawArc(0, true);
-  }
-
-
-  /* ─── THE ARC AGAIN (contact) ───
-     A dot travels from the arc's foot to its top: scope to launch. */
-  const traveller = $('.contact__arc .arc__traveller');
+  /* ─── THE MARK AGAIN (contact) ───
+     A dot slides along the line and lands as its full stop. */
+  const traveller = $('.contact__mark .mark__traveller');
   function travel(box) {
-    if (reduce) return;   // the markup already places it at the top
-    const g = geom(0, 0, 0);
-    const put = (t) => {
-      const [x, y] = bez(g, t);
-      traveller.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
-    };
-    put(0);
+    if (reduce) return;   // the markup already places it at the end
+    const [x1, y] = traveller.getAttribute('transform').match(/[\d.]+/g).map(Number);
+    const x0 = Number(traveller.dataset.from);
+    const put = (x) => traveller.setAttribute('transform', `translate(${x.toFixed(1)} ${y})`);
+    put(x0);
     setTimeout(() => {
-      const dur = 1700, t0 = performance.now();
+      const dur = 1500, t0 = performance.now();
       const step = (t) => {
         const k = clamp((t - t0) / dur, 0, 1);
         const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
-        put(0.5 * e);
+        put(x0 + (x1 - x0) * e);
         if (k < 1) requestAnimationFrame(step); else box.classList.add('is-landed');
       };
       requestAnimationFrame(step);

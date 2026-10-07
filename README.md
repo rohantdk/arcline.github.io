@@ -7,7 +7,7 @@ https://rohantdk.github.io/arcline.github.io/
 
 One page, in separate sections, following the 2026 works brochure:
 
-1. Hero, with the interactive arc
+1. Hero, with the logo mark and a dot per work category
 2. Tools marquee
 3. Contents (dark band, links to each work category)
 4. About, with the four numbers
@@ -21,9 +21,10 @@ One page, in separate sections, following the 2026 works brochure:
 All in `script.js`, vanilla JavaScript with no libraries. Without JavaScript the page reads in full, and anyone
 with *reduce motion* switched on gets the finished state with no movement.
 
-- **The arc** (hero): the arc, with three echo lines, standing on the baseline of the word. It leans toward
-  the pointer and sways on its own otherwise. Its seven dots are the work categories; hover for the name and count,
-  click to jump there. Names and counts are read from the Contents list, so there is nothing extra to update.
+- **The mark** (hero): the logo's "a." standing on the baseline of the word, with seven square dots as its full stop,
+  one per work category. The line and the "a" draw themselves in, then the dots pop in. Hover or focus a dot for the
+  name and count, click to jump there. Names and counts are read from the Contents list, so there is nothing extra
+  to update.
 - **Nav logo**: the logo's baseline fills from left to right as you scroll down the page. In the Work section the
   fill and the two square dots take the colour of the category in view, and (on wide screens) a label beside the logo names it, e.g. "03 / 07 AI engineering".
 - **Live-site previews**: hovering a project card that has a live site shows its homepage in a small browser frame
@@ -31,7 +32,7 @@ with *reduce motion* switched on gets the finished state with no movement.
   `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
 - **Whole-card links**: a card's `card__link` is stretched over the card (in `style.css`), so a click or tap
   anywhere on it opens the site. Cards without a link light up briefly when clicked instead.
-- **The arc again** (contact): it draws itself on the contact rule, and a dot travels from its foot to its top.
+- **The mark again** (contact): it draws itself on the contact rule, and a dot slides along its line and lands as its full stop.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
   Edit the list in `index.html`; `data-cat` sets each dot's colour.
 - **Project filter**: above the work. Filter by status (driven by `chip--done` / `chip--open`) or search by name,
@@ -53,7 +54,7 @@ with *reduce motion* switched on gets the finished state with no movement.
 - `png/`: 512 px symbols, 1024 px social squares (dark and light), 2000 px logos on transparent backgrounds.
 
 The nav uses the logo inline in `index.html` (so its baseline can show scroll progress) and `assets/favicon.svg`
-is the symbol tile. The hero and contact arcs are kept as a design motif; they are no longer the logo.
+is the symbol tile. The hero and Contact show the "a." symbol drawn into the page (see Motion and interaction).
 
 ## Colours
 
@@ -71,6 +72,6 @@ Status chips: `chip--done` (live, built, delivered) or `chip--open` (in build, s
 
 ## Share preview
 
-There is no `og:image` yet. To add one, export a 1200 × 630 px image to `assets/og-banner.jpg`, add
-`<meta property="og:image" content="https://rohantdk.github.io/arcline.github.io/assets/og-banner.jpg" />`
-and change `twitter:card` to `summary_large_image`.
+`assets/og-banner.jpg` (1200 × 630 px) is the image shown when the link is shared on WhatsApp, LinkedIn and the
+like: the logo on the dark band with the hero line. It is set by the `og:image` tags in `index.html`, with
+`twitter:card` set to `summary_large_image`. To change it, replace the file at the same size and keep the name.
