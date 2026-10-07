@@ -5,7 +5,7 @@
    - Hero: letter intro, the interactive arc
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
-   - Live-site previews beside the cursor on project links
+   - Live-site previews beside the cursor on project cards
    - The arc again in Contact, with a dot that travels to its top
    - Project filter (status + search by name or stack)
    - Command palette (⌘K, Ctrl+K or /)
@@ -384,8 +384,10 @@
 
 
   /* ─── LIVE-SITE PREVIEWS ───
-     Hovering a project's link shows its homepage in a small browser frame
-     beside the cursor. Mouse and trackpad only. */
+     Hovering a project card that has a live site shows its homepage in a
+     small browser frame beside the cursor, after a short pause so it does
+     not flash up while the cursor is just passing. Hovering the link itself
+     shows it at once. Mouse and trackpad only. */
   const peekLinks = $$('[data-peek]');
   if (fine && peekLinks.length) {
     const peek = document.createElement('div');
@@ -414,24 +416,43 @@
       raf = requestAnimationFrame(follow);
     };
 
+    const HOVER_DELAY = 250;
+    let timer = 0, shown = false, last = [0, 0];
+
+    const show = (a) => {
+      clearTimeout(timer);
+      if (shown) return;
+      shown = true;
+      img.src = a.dataset.peek;
+      url.textContent = a.firstChild.textContent.trim();
+      peek.dataset.cat = a.closest('[data-cat]').dataset.cat;
+      aim(...last);
+      x = tx; y = ty;
+      place();
+      peek.classList.add('is-on');
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(follow);
+    };
+    const hide = () => {
+      clearTimeout(timer);
+      shown = false;
+      peek.classList.remove('is-on');
+      cancelAnimationFrame(raf);
+    };
+
     peekLinks.forEach(a => {
-      a.addEventListener('pointerenter', (e) => {
+      const card = a.closest('.card');
+      card.addEventListener('pointerenter', (e) => {
         if (e.pointerType !== 'mouse') return;
-        img.src = a.dataset.peek;
-        url.textContent = a.firstChild.textContent.trim();
-        peek.dataset.cat = a.closest('[data-cat]').dataset.cat;
-        aim(e.clientX, e.clientY);
-        x = tx; y = ty;
-        place();
-        peek.classList.add('is-on');
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(follow);
+        last = [e.clientX, e.clientY];
+        timer = setTimeout(() => show(a), HOVER_DELAY);
       });
-      a.addEventListener('pointermove', (e) => aim(e.clientX, e.clientY));
-      a.addEventListener('pointerleave', () => {
-        peek.classList.remove('is-on');
-        cancelAnimationFrame(raf);
+      card.addEventListener('pointermove', (e) => {
+        last = [e.clientX, e.clientY];
+        if (shown) aim(...last);
       });
+      card.addEventListener('pointerleave', hide);
+      a.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(a); });
     });
 
     // fetch the images once the work is close, so the first hover is instant
