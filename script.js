@@ -1,10 +1,12 @@
 /* Arcline
    - Mobile menu toggle
    - Highlight the nav link for the part of the page in view
-   - Scroll progress arc in the nav logo
+   - Scroll progress arc in the nav logo, tinted by the work category in view
    - Hero: letter intro, the interactive arc
    - Tools marquee that speeds up and turns with the scroll
-   - Scroll reveals, counting stats, card spotlight, magnetic buttons
+   - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
+   - Live-site previews beside the cursor on project links
+   - The arc again in Contact, with a dot that travels to its top
    - Project filter (status + search by name or stack)
    - Command palette (⌘K, Ctrl+K or /)
    - Copy email
@@ -64,11 +66,53 @@
     const max = root.scrollHeight - innerHeight;
     const p = max > 0 ? clamp(scrollY / max, 0, 1) : 0;
     markFill.style.strokeDashoffset = String(1 - p);
+    updateWhere();
   };
   addEventListener('scroll', () => {
     if (!progressQueued) { progressQueued = true; requestAnimationFrame(updateProgress); }
   }, { passive: true });
   addEventListener('resize', updateProgress);
+
+
+  /* ─── WHERE AM I: the work category in view tints the nav ─── */
+  const logo  = $('.nav__logo');
+  const where = $('.nav__where', logo);
+  const work  = $('#work');
+  const catEls = $$('.cat');
+  // read once, before the labels' decode effect touches the text
+  const catLabels = new Map(catEls.map(c => [c, {
+    n: $('.cat__index', c).firstChild.textContent.replace('Section', '').trim(),
+    t: $('.cat__title', c).textContent,
+  }]));
+  let shownCat = null;
+
+  function updateWhere() {
+    const mid = innerHeight * 0.5;
+    const w = work.getBoundingClientRect();
+    let cur = null;
+    if (w.top < mid && w.bottom > mid) {
+      for (const c of catEls) {
+        if (c.hidden) continue;
+        if (c.getBoundingClientRect().top <= mid) cur = c; else break;
+      }
+    }
+    if (cur === shownCat) return;
+    shownCat = cur;
+    if (!cur) {
+      logo.removeAttribute('data-cat');
+      where.classList.remove('is-on');
+      return;
+    }
+    const { n, t } = catLabels.get(cur);
+    logo.dataset.cat = cur.dataset.cat;
+    where.textContent = '';
+    const b = document.createElement('b');
+    b.textContent = n;
+    where.append(b, ' ' + t);
+    where.classList.remove('is-on');
+    void where.offsetWidth;
+    where.classList.add('is-on');
+  }
   updateProgress();
 
 
@@ -98,15 +142,15 @@
     el.style.setProperty('--d', d + 's');
   });
 
-  $$('.block .eyebrow, .work__intro .eyebrow, .block__title, .about__text p, .cat__head, .contact .eyebrow, .contact__title, .contact__lead')
+  $$('.block .eyebrow, .work__intro .eyebrow, .block__title, .about__text p, .cat__head, .contents .label, .contact .eyebrow, .contact__title, .contact__lead, .contact__arc')
     .forEach(el => el.classList.add('reveal'));
 
   // groups whose children come in one after another
-  [['.toc', 'li', 60], ['.stats', 'div', 90], ['.services', 'li', 70], ['.steps', 'li', 90], ['.contact__grid', 'div', 80]]
+  [['.toc', 'li', 60], ['.stats', 'div', 90], ['.services', 'li', 70], ['.steps', 'li', 280], ['.contact__grid', 'div', 80]]
     .forEach(([parent, child, step]) => $$(parent).forEach(p => {
       $$(':scope > ' + child, p).forEach((el, i) => {
         el.classList.add('reveal');
-        el.style.setProperty('--d', Math.min(i * step, 480) + 'ms');
+        el.style.setProperty('--d', Math.min(i * step, 900) + 'ms');
       });
     }));
   // cards: the two cards of a row arrive together, the right one a beat later
@@ -115,7 +159,12 @@
     el.style.setProperty('--d', (i % 2) * 90 + 'ms');
   }));
 
-  const onReveal = (el) => { if (el.parentElement.classList.contains('stats')) countUp(el); };
+  const onReveal = (el) => {
+    if (el.parentElement.classList.contains('stats')) countUp(el);
+    if (el.matches('.eyebrow, .label')) decode(el);
+    if (el.matches('.cat__head')) decode($('.cat__index', el));
+    if (el.matches('.contact__arc')) travel(el);
+  };
 
   const revealIO = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -156,6 +205,43 @@
     };
     requestAnimationFrame(step);
   }
+
+
+  /* ─── LABELS THAT DECODE ───
+     Mono labels settle letter by letter, left to right, from random glyphs. */
+  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/#';
+  function decode(el) {
+    if (reduce || !el) return;
+    const nodes = [];
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (walk.nextNode()) if (walk.currentNode.nodeValue.trim()) nodes.push(walk.currentNode);
+    const finals = nodes.map(n => n.nodeValue);
+    const total = finals.reduce((a, f) => a + f.length, 0);
+    const dur = 700, t0 = performance.now();
+    const step = (t) => {
+      const k = clamp((t - t0) / dur, 0, 1);
+      let at = 0;
+      nodes.forEach((n, j) => {
+        const f = finals[j];
+        let out = '';
+        for (let i = 0; i < f.length; i++) {
+          out += (at + i) / total < k || f[i] === ' ' ? f[i] : GLYPHS[(Math.random() * GLYPHS.length) | 0];
+        }
+        n.nodeValue = out;
+        at += f.length;
+      });
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+
+  /* ─── LIVE CHIPS: projects that are live keep a slow pulse ─── */
+  $$('.chip--done').forEach((chip, i) => {
+    if (!/^live/i.test(chip.textContent.trim())) return;
+    chip.classList.add('chip--live');
+    chip.style.setProperty('--pd', ((i * 0.53) % 2.6).toFixed(2) + 's');
+  });
 
 
   /* ─── THE ARC (hero) ───
@@ -270,6 +356,90 @@
       if (entry.isIntersecting) raf = requestAnimationFrame(loop);
     }).observe(arcBox);
     drawArc(0, true);
+  }
+
+
+  /* ─── THE ARC AGAIN (contact) ───
+     A dot travels from the arc's foot to its top: scope to launch. */
+  const traveller = $('.contact__arc .arc__traveller');
+  function travel(box) {
+    if (reduce) return;   // the markup already places it at the top
+    const g = geom(0, 0, 0);
+    const put = (t) => {
+      const [x, y] = bez(g, t);
+      traveller.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+    };
+    put(0);
+    setTimeout(() => {
+      const dur = 1700, t0 = performance.now();
+      const step = (t) => {
+        const k = clamp((t - t0) / dur, 0, 1);
+        const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+        put(0.5 * e);
+        if (k < 1) requestAnimationFrame(step); else box.classList.add('is-landed');
+      };
+      requestAnimationFrame(step);
+    }, 1150);
+  }
+
+
+  /* ─── LIVE-SITE PREVIEWS ───
+     Hovering a project's link shows its homepage in a small browser frame
+     beside the cursor. Mouse and trackpad only. */
+  const peekLinks = $$('[data-peek]');
+  if (fine && peekLinks.length) {
+    const peek = document.createElement('div');
+    peek.className = 'peek';
+    peek.setAttribute('aria-hidden', 'true');
+    peek.innerHTML = '<div class="peek__box"><p class="peek__bar"><i></i><i></i><i></i><span></span></p><img alt="" width="640" height="400" decoding="async" /></div>';
+    document.body.appendChild(peek);
+    const img = $('img', peek), url = $('span', peek);
+    const W = 320, H = 228;
+    let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+
+    const aim = (cx, cy) => {
+      const left = cx + 28 + W > innerWidth - 12;
+      peek.classList.toggle('is-left', left);
+      tx = left ? cx - 28 - W : cx + 28;
+      ty = clamp(cy + 20, 12, innerHeight - H - 12);
+    };
+    const place = () => {
+      const tilt = reduce ? 0 : clamp((tx - x) * 0.06, -5, 5);
+      peek.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) rotate(${tilt.toFixed(2)}deg)`;
+    };
+    const follow = () => {
+      x = reduce ? tx : lerp(x, tx, 0.18);
+      y = reduce ? ty : lerp(y, ty, 0.18);
+      place();
+      raf = requestAnimationFrame(follow);
+    };
+
+    peekLinks.forEach(a => {
+      a.addEventListener('pointerenter', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        img.src = a.dataset.peek;
+        url.textContent = a.firstChild.textContent.trim();
+        peek.dataset.cat = a.closest('[data-cat]').dataset.cat;
+        aim(e.clientX, e.clientY);
+        x = tx; y = ty;
+        place();
+        peek.classList.add('is-on');
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(follow);
+      });
+      a.addEventListener('pointermove', (e) => aim(e.clientX, e.clientY));
+      a.addEventListener('pointerleave', () => {
+        peek.classList.remove('is-on');
+        cancelAnimationFrame(raf);
+      });
+    });
+
+    // fetch the images once the work is close, so the first hover is instant
+    new IntersectionObserver((entries, io) => {
+      if (!entries[0].isIntersecting) return;
+      peekLinks.forEach(a => { new Image().src = a.dataset.peek; });
+      io.disconnect();
+    }, { rootMargin: '800px 0px' }).observe(work);
   }
 
 
