@@ -65,7 +65,8 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   to try them; don't remove without asking.
 - Removed at the owner's request: the live IST clock in the hero, the city coordinates under the old hero arc, and
   the degree line in About. Don't bring them back.
-- Kept: the four stats in About (32, 14, 5, 2).
+- Kept: the four stats in About (30, 14, 5, 2). Was 32 until the two non-client experiments (Vanguard Zero,
+  AI Foundations) were hidden for high-ticket positioning; they are in git history.
 - Live-site previews show on hover anywhere on a card with a live site, after a 250 ms pause (instantly on the
   link itself). Nine cards have one.
 - Cards with a live site open it from a click anywhere on the card (stretched link, CSS only; the trade-off is
@@ -76,6 +77,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - Agency voice (October 2026): the site speaks as the studio ("we", "Arcline"), not one person. Rohan is named
   once, as founder, in About (and in the meta description). Arcline "brings in specialist partners when a project
   needs them"; never claim a team, team size or roles beyond that.
+- High-ticket positioning (October 2026): the owner wants the site aimed at high-ticket clients. Hero line is
+  "A web and AI studio for manufacturers, exporters and growing brands" (also on the share image). Suggested but
+  not yet done: own domain, studio email, fewer projects as case studies with results, a "projects start from"
+  line or a qualifying enquiry form.
 - Never say where the studio is: no city, state or address anywhere (page, meta, share image, docs). Client
   cities were removed from cards and the client region from About; "Clients in India and Germany" and
   country-level mentions in project copy stay. The +91 WhatsApp number is the one unavoidable hint.
