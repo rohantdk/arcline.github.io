@@ -24,15 +24,21 @@ with *reduce motion* switched on gets the finished state with no movement.
 - **The arc** (hero): the logo's arc, with three echo lines, standing on the baseline of the word. It leans toward
   the pointer and sways on its own otherwise. Its seven dots are the work categories; hover for the name and count,
   click to jump there. Names and counts are read from the Contents list, so there is nothing extra to update.
-- **Nav logo**: the small arc fills as you scroll down the page.
+- **Nav logo**: the small arc fills as you scroll down the page. In the Work section it takes the colour of the
+  category in view, and (on wide screens) a label beside the logo names it, e.g. "03 / 07 AI engineering".
+- **Live-site previews**: hovering a project's link shows its homepage in a small browser frame beside the cursor
+  (mouse and trackpad only). To add one, save a 640 × 400 px screenshot to `assets/previews/<name>.webp` and add
+  `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
+- **The arc again** (contact): it draws itself on the contact rule, and a dot travels from its foot to its top.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
   Edit the list in `index.html`; `data-cat` sets each dot's colour.
 - **Project filter**: above the work. Filter by status (driven by `chip--done` / `chip--open`) or search by name,
   client, city or stack. Category counts update and empty categories hide.
 - **Command palette**: `⌘K`, `Ctrl+K` or `/` (or the Search button) jumps to any section, project or contact action.
   It is built from the page, so new cards appear in it on their own.
-- **Small things**: letters of the title rise in and lift on hover, section rules draw in, the stats count up,
-  cards light up under the pointer, buttons lean toward the cursor, and the email has a copy button.
+- **Small things**: letters of the title rise in and lift on hover, section rules draw in, mono labels decode
+  from random glyphs, the stats count up, a line draws across each Process step in turn, the dot on "live" chips
+  pulses, cards light up under the pointer, buttons lean toward the cursor, and the email has a copy button.
 
 ## Colours
 
