@@ -77,10 +77,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 
 - Logo (October 2026): "One Line" in a tough weight (thick stroke, square ends, square wine dots), chosen after
   ten concepts. It replaced the arc in the nav, the favicon and Contact (the "a." with a dot that lands as its full
-  stop). In the hero the owner removed the word "Arcline" and the logo itself is now the title, with a square per
-  work category as its full stop (still links with hover labels); the `h1` keeps "Arcline" visually hidden. The
-  arc's lean and the title's letter rise and hover lift went with them. Files and variants are in `assets/logo/`;
-  the share image is `assets/og-banner.jpg`.
+  stop). In the hero the owner removed the word "Arcline": the title is the "a." symbol alone, with a square per
+  work category as its full stop (still links with hover labels); the full wordmark there was tried and dropped.
+  The `h1` keeps "Arcline" visually hidden. The arc's lean and the title's letter rise and hover lift are gone.
+  Files and variants are in `assets/logo/`; the share image is `assets/og-banner.jpg`.
 
 ## Working with the owner
 

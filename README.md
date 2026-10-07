@@ -7,7 +7,7 @@ https://rohantdk.github.io/arcline.github.io/
 
 One page, in separate sections, following the 2026 works brochure:
 
-1. Hero, with the logo as the title and a dot per work category
+1. Hero, with the logo's "a." as the title and a dot per work category
 2. Tools marquee
 3. Contents (dark band, links to each work category)
 4. About, with the four numbers
@@ -21,9 +21,9 @@ One page, in separate sections, following the 2026 works brochure:
 All in `script.js`, vanilla JavaScript with no libraries. Without JavaScript the page reads in full, and anyone
 with *reduce motion* switched on gets the finished state with no movement.
 
-- **The title** (hero): the One Line logo, drawn large, with seven square dots as its full stop, one per work
-  category. The `h1` still holds the word "Arcline" (visually hidden) for search and screen readers. The logo is
-  revealed from left to right, then the dots pop in. Hover or focus a dot for the
+- **The title** (hero): the logo's "a." symbol, drawn large, with seven square dots as its full stop, one per work
+  category. The `h1` still holds the word "Arcline" (visually hidden) for search and screen readers. The line and
+  the "a" draw themselves in, then the dots pop in. Hover or focus a dot for the
   name and count, click to jump there. Names and counts are read from the Contents list, so there is nothing extra
   to update.
 - **Nav logo**: the logo's baseline fills from left to right as you scroll down the page. In the Work section the
