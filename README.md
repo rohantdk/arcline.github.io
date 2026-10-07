@@ -21,11 +21,11 @@ One page, in separate sections, following the 2026 works brochure:
 All in `script.js`, vanilla JavaScript with no libraries. Without JavaScript the page reads in full, and anyone
 with *reduce motion* switched on gets the finished state with no movement.
 
-- **The arc** (hero): the logo's arc, with three echo lines, standing on the baseline of the word. It leans toward
+- **The arc** (hero): the arc, with three echo lines, standing on the baseline of the word. It leans toward
   the pointer and sways on its own otherwise. Its seven dots are the work categories; hover for the name and count,
   click to jump there. Names and counts are read from the Contents list, so there is nothing extra to update.
-- **Nav logo**: the small arc fills as you scroll down the page. In the Work section it takes the colour of the
-  category in view, and (on wide screens) a label beside the logo names it, e.g. "03 / 07 AI engineering".
+- **Nav logo**: the logo's baseline fills from left to right as you scroll down the page. In the Work section the
+  fill and the two square dots take the colour of the category in view, and (on wide screens) a label beside the logo names it, e.g. "03 / 07 AI engineering".
 - **Live-site previews**: hovering a project card that has a live site shows its homepage in a small browser frame
   beside the cursor, after a quarter-second pause (at once on the link itself; mouse and trackpad only). To add one, save a 640 × 400 px screenshot to `assets/previews/<name>.webp` and add
   `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
@@ -48,10 +48,10 @@ with *reduce motion* switched on gets the finished state with no movement.
 
 - `arcline-logo*.svg`: the full logo. `-dark-bg` for dark backgrounds, `-mono-dark` / `-mono-light` for one colour.
 - `arcline-symbol*.svg`: the "a." symbol, same variants. `arcline-symbol-tile.svg` puts it on the dark band tile.
-- `favicon.svg`: the symbol tile, sized for browser tabs.
 - `png/`: 512 px symbols, 1024 px social squares (dark and light), 2000 px logos on transparent backgrounds.
 
-The site itself (nav, favicon, hero arc) still uses the earlier arc mark.
+The nav uses the logo inline in `index.html` (so its baseline can show scroll progress) and `assets/favicon.svg`
+is the symbol tile. The hero and contact arcs are kept as a design motif; they are no longer the logo.
 
 ## Colours
 

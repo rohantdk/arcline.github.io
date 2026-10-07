@@ -367,11 +367,11 @@ a { color: inherit; }
    reads in full without JavaScript and for anyone who turns motion off.
 ════════════════════════════════════════════════════ */
 
-/* ─── nav: scroll progress arc, search button ─── */
-.nav__mark { width: 30px; height: 19px; overflow: visible; flex: none; }
-.nav__mark path { fill: none; stroke-width: 3.2; stroke-linecap: round; }
-.nav__mark-track { stroke: var(--rule); }
-.nav__mark-fill { stroke: var(--c, var(--accent)); stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke .5s; }
+/* ─── nav: scroll progress on the logo's baseline, search button ─── */
+.nav__mark { height: 26px; width: auto; flex: none; display: block; }
+.nav__mark-word { fill: none; stroke: var(--ink); }
+.nav__mark-dot { fill: var(--c, var(--accent)); transition: fill .5s; }
+.nav__mark-fill { fill: none; stroke: var(--c, var(--accent)); stroke-width: 13; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke .5s; }
 
 .nav__where {
   margin-left: 6px; padding-left: 16px; border-left: 1px solid var(--rule);

@@ -57,6 +57,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   removed and it has no preview. The card stays. Restore the link only when the owner says the store is back.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
+- Logo (October 2026): "One Line" in a tough weight (thick stroke, square ends, square wine dots), chosen after
+  ten concepts. It replaced the arc in the nav and favicon; the hero and contact arcs stay as a motif. Files and
+  variants are in `assets/logo/`.
+
 ## Working with the owner
 
 - Ask about goal, context, action and expected output before a sizeable task. Give an honest recommendation
