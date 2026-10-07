@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    ARCLINE — Works 2026
-   Palette "Nashik Valley": aubergine ink, wine accent, vine green,
+   Palette "Vineyard": aubergine ink, wine accent, vine green,
    on a soft paper ground. Each work category carries its own colour
    (--c / --c-soft on light, --c-light on the aubergine bands).
    Schibsted Grotesk (headings) · DM Sans (body) · DM Mono (labels)
@@ -176,6 +176,7 @@ a { color: inherit; }
   color: var(--muted);
   margin-bottom: clamp(64px, 12vw, 140px);
 }
+.hero__meta span:last-child { margin-left: auto; }
 /* the name is the logo (in .hero__mark); the h1 keeps it for search and screen readers */
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
@@ -352,7 +353,7 @@ a { color: inherit; }
 }
 .contact__lead { color: var(--on-band); font-size: clamp(18px, 1.8vw, 21px); max-width: 30em; margin-bottom: clamp(48px, 6vw, 72px); }
 .contact__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   border-top: 1px solid rgba(255,255,255,0.18); padding-top: 24px;
 }
 .contact__grid dt {

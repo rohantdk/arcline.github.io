@@ -1,6 +1,6 @@
 # Arcline — project memory
 
-Portfolio site of Rohan Tidke's web and AI studio, Arcline (Nashik, India). One static page: `index.html`,
+Portfolio site of Arcline, the web and AI studio founded by Rohan Tidke. One static page: `index.html`,
 `style.css`, `script.js`, plus `assets/`. No framework, no build step, no dependencies. Live at
 https://rohantdk.github.io/arcline.github.io/ (GitHub Pages, published from `main`).
 
@@ -63,7 +63,7 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 
 - Kept: the magnetic buttons (hero buttons and nav "Start a project" lean toward the cursor). The owner wanted
   to try them; don't remove without asking.
-- Removed at the owner's request: the live IST clock in the hero, the Nashik coordinates under the old hero arc, and
+- Removed at the owner's request: the live IST clock in the hero, the city coordinates under the old hero arc, and
   the degree line in About. Don't bring them back.
 - Kept: the four stats in About (32, 14, 5, 2).
 - Live-site previews show on hover anywhere on a card with a live site, after a 250 ms pause (instantly on the
@@ -73,6 +73,12 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   clicked; the owner chose this over leaving them inert.
 - Vrinda Mart: vrindamart.site showed Shopify's "store unavailable" page (October 2026), so its link was
   removed and it has no preview. The card stays. Restore the link only when the owner says the store is back.
+- Agency voice (October 2026): the site speaks as the studio ("we", "Arcline"), not one person. Rohan is named
+  once, as founder, in About (and in the meta description). Arcline "brings in specialist partners when a project
+  needs them"; never claim a team, team size or roles beyond that.
+- Never say where the studio is: no city, state or address anywhere (page, meta, share image, docs). Client
+  cities were removed from cards and the client region from About; "Clients in India and Germany" and
+  country-level mentions in project copy stay. The +91 WhatsApp number is the one unavoidable hint.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
 - Logo (October 2026): "One Line" in a tough weight (thick stroke, square ends, square wine dots), chosen after

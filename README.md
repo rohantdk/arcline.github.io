@@ -1,6 +1,6 @@
 # Arcline
 
-The web and AI studio of Rohan Tidke, Nashik. Plain HTML, CSS and JavaScript, hosted on GitHub Pages at
+Arcline, a web and AI studio founded by Rohan Tidke. Plain HTML, CSS and JavaScript, hosted on GitHub Pages at
 https://rohantdk.github.io/arcline.github.io/
 
 ## Page structure
@@ -59,7 +59,7 @@ is the symbol tile. The hero and Contact show the "a." symbol drawn into the pag
 
 ## Colours
 
-Palette "Nashik Valley", defined as tokens at the top of `style.css`: aubergine ink `#22162A`,
+Palette "Vineyard", defined as tokens at the top of `style.css`: aubergine ink `#22162A`,
 wine accent `#7B2346`, vine green `#4E7428`, paper `#F6F5F2`, and the dark band `#2B1631`.
 Each work category has a strong, a soft and a light colour (`--web`, `--web-soft`, `--web-light`, and so on).
 Any element with `data-cat="…"` picks them up as `--c` (text and marks on light), `--c-soft` (chip and
