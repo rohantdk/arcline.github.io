@@ -1,35 +1,25 @@
 # Arcline — arcline.github.io
 
-Portfolio site for Rohan Tidke. Built with pure HTML, CSS & JS. Hosted on GitHub Pages.
+The web and AI studio of Rohan Tidke, Nashik. Plain HTML, CSS and JavaScript, hosted on GitHub Pages.
 
-## 🚀 Deploy in 5 Steps
+## How the page works
 
-1. Go to github.com → New repository
-2. Name it exactly: `arcline.github.io`
-3. Upload all files (keep folder structure):
-   ```
-   index.html
-   style.css
-   script.js
-   assets/
-     favicon.svg
-     og-banner.jpg  ← add this from Canva (1200×630px)
-   ```
-4. Go to Settings → Pages → Source: `main` branch → `/root`
-5. Wait 60 seconds → visit `https://arcline.github.io`
+- One paragraph, one ledger, one closing paragraph. There are no section blocks.
+- The underlined category words in the opening paragraph filter the ledger. Each filter has its own link, e.g. `arcline.github.io/#ai`.
+  Keys: `web`, `shop`, `ai`, `apps`, `platforms`, `brand`, `studio`.
+- Each ledger line is a native `<details>`, so it opens and closes without JavaScript.
+- Monochrome only (paper and ink, inverted in dark mode). Every font weight is 400.
 
-## 📱 WhatsApp OG Preview (Phase 4)
+## Adding a work
 
-Create `assets/og-banner.jpg` on Canva:
-- Size: 1200 × 630 px
-- Content: "Arcline · Web Developer · arcline.github.io"
-- Colors: #080808 background, #C8FF00 accent
+Copy one `<details class="w">` block in `index.html`, set `data-c` to a category key, renumber, and update the small count (`<sup>`) next to the matching word in the paragraph.
 
-Then update this line in index.html:
+## Share preview
+
+There is no `og:image` yet. To add one, export a 1200 × 630 px monochrome image to `assets/og-banner.jpg` and add:
+
 ```html
 <meta property="og:image" content="https://arcline.github.io/assets/og-banner.jpg" />
 ```
 
-## 🎨 Studio Name
-
-Currently set to **Arcline**. To change it, find & replace `Arcline` in index.html.
+and change `twitter:card` to `summary_large_image`.
