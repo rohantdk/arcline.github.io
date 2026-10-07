@@ -53,6 +53,9 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - Kept: the four stats in About (32, 14, 5, 2).
 - Live-site previews show on hover anywhere on a card with a live site, after a 250 ms pause (instantly on the
   link itself). Nine cards have one.
+- Cards with a live site open it from a click anywhere on the card (stretched link, CSS only; the trade-off is
+  that text in those cards can't be selected). Cards without a link scroll fully into view and flash when
+  clicked; the owner chose this over leaving them inert.
 - Vrinda Mart: vrindamart.site showed Shopify's "store unavailable" page (October 2026), so its link was
   removed and it has no preview. The card stays. Restore the link only when the owner says the store is back.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
