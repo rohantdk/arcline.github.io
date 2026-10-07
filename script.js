@@ -6,6 +6,7 @@
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, labels that decode, card spotlight, magnetic buttons
    - Live-site previews beside the cursor on project cards
+   - Cards without a link light up when clicked
    - The arc again in Contact, with a dot that travels to its top
    - Project filter (status + search by name or stack)
    - Command palette (⌘K, Ctrl+K or /)
@@ -447,12 +448,16 @@
         last = [e.clientX, e.clientY];
         timer = setTimeout(() => show(a), HOVER_DELAY);
       });
+      // the link is stretched over the whole card, so "on the link" means
+      // over its visible text, not anywhere on the card
       card.addEventListener('pointermove', (e) => {
         last = [e.clientX, e.clientY];
-        if (shown) aim(...last);
+        if (shown) return aim(...last);
+        if (e.pointerType !== 'mouse') return;
+        const r = a.getBoundingClientRect();
+        if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) show(a);
       });
       card.addEventListener('pointerleave', hide);
-      a.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(a); });
     });
 
     // fetch the images once the work is close, so the first hover is instant
@@ -462,6 +467,27 @@
       io.disconnect();
     }, { rootMargin: '800px 0px' }).observe(work);
   }
+
+
+  /* ─── CARDS WITHOUT A LINK ───
+     Cards with a live site open it from anywhere on the card (style.css
+     stretches the link). The rest have nothing to open, so a click brings
+     the card fully into view and lights it up briefly. Selecting text does
+     not count as a click. */
+  const flash = (el) => {
+    el.classList.remove('is-flash');
+    void el.offsetWidth;
+    el.classList.add('is-flash');
+    el.addEventListener('animationend', () => el.classList.remove('is-flash'), { once: true });
+  };
+
+  $$('.card').filter(card => !$('.card__link', card)).forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button') || String(getSelection())) return;
+      card.scrollIntoView({ behavior, block: 'nearest' });
+      if (!reduce) flash(card);
+    });
+  });
 
 
   /* ─── TOOLS MARQUEE ─── */
@@ -700,13 +726,6 @@
   const pList   = $('#paletteList');
   const isMac   = /Mac|iPhone|iPad/.test(navigator.userAgentData?.platform || navigator.platform || '');
   $$('[data-kbd]').forEach(k => { k.textContent = isMac ? '⌘K' : 'Ctrl K'; });
-
-  const flash = (el) => {
-    el.classList.remove('is-flash');
-    void el.offsetWidth;
-    el.classList.add('is-flash');
-    el.addEventListener('animationend', () => el.classList.remove('is-flash'), { once: true });
-  };
 
   const goTo = (el, { highlight = false } = {}) => {
     if (el.hidden || el.closest('[hidden]')) resetFilter();

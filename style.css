@@ -325,6 +325,10 @@ a { color: inherit; }
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
 .card__link:hover { text-decoration-thickness: 2px; }
+/* the link covers its whole card, so a click anywhere on the card opens the site */
+.card__link::after { content: ''; position: absolute; inset: 0; }
+.card__link:focus-visible { outline: none; }
+.card__link:focus-visible::after { outline: 2px solid var(--c); outline-offset: -2px; }
 
 /* ════ PROCESS ════ */
 .steps { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
