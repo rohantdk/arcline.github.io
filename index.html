@@ -3,334 +3,460 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arcline — Rohan Tidke</title>
-  <meta name="description" content="Arcline is the web and AI studio of Rohan Tidke in Nashik, India. Thirty-two works: client websites, Shopify stores, AI tools, apps, platforms, brand work and experiments." />
+  <title>Arcline — Web and AI studio of Rohan Tidke</title>
+  <meta name="description" content="Arcline is the web and AI studio of Rohan Tidke in Nashik, India. Thirty-two projects: client websites, Shopify stores, AI tools, mobile apps, automation and brand work, for clients in India and Germany." />
 
-  <meta property="og:title" content="Arcline — Rohan Tidke" />
-  <meta property="og:description" content="The web and AI studio of Rohan Tidke, Nashik. Thirty-two works, one person, from first scope to launch day." />
-  <meta property="og:url" content="https://arcline.github.io" />
+  <meta property="og:title" content="Arcline — Web and AI studio of Rohan Tidke" />
+  <meta property="og:description" content="Thirty-two projects: client websites, Shopify stores, AI tools, mobile apps, automation and brand work. Nashik, India." />
+  <meta property="og:url" content="https://rohantdk.github.io/arcline.github.io/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#2B1631" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="top">
-    <span>Arcline</span>
-    <span>Works, 2026</span>
-    <span>Nashik <time id="clock">IST</time></span>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__logo" href="#top">Arcline</a>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a class="nav__cta" href="#contact">Start a project</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <h1 class="sr">Arcline, the web and AI studio of Rohan Tidke</h1>
-
-    <p class="prose">
-      Arcline is the web and AI studio of Rohan Tidke, <em>one person</em> in Nashik, India, working from first scope to launch day.
-      Thirty-two works so far:
-      <span class="nb"><button class="f" data-f="web" aria-pressed="false">client websites<sup>8</sup></button>,</span>
-      <span class="nb"><button class="f" data-f="shop" aria-pressed="false">shopify stores<sup>4</sup></button>,</span>
-      <span class="nb"><button class="f" data-f="ai" aria-pressed="false">ai tools<sup>4</sup></button>,</span>
-      <span class="nb"><button class="f" data-f="apps" aria-pressed="false">apps and automation<sup>4</sup></button>,</span>
-      <span class="nb"><button class="f" data-f="platforms" aria-pressed="false">web platforms<sup>4</sup></button>,</span>
-      <span class="nb"><button class="f" data-f="brand" aria-pressed="false">brand and content<sup>4</sup></button>,</span>
-      and <span class="nb"><button class="f" data-f="studio" aria-pressed="false">a few of my own<sup>4</sup></button>.</span>
-      Most are for manufacturers, exporters and small brands across Maharashtra; one is for an advisory firm in Germany.
-    </p>
-
-    <p class="tally" aria-live="polite"><span id="tally">32 of 32</span><button class="reset" id="reset" hidden>show all</button><span class="hint">open any line</span></p>
-
-    <div class="ledger" id="ledger">
-
-      <details class="w" data-c="web">
-        <summary><span class="n">01</span><span class="t">Provectus Engineering Solutions</span><span class="k">Engineering and fabrication, Nashik</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Seven-page corporate site for an engineering firm building SPM machines, sheet-metal work and agricultural equipment. Enquiries land in a Google Sheet with an instant email alert.</p>
-          <p class="x">HTML · CSS · JavaScript · Netlify CI · Google Apps Script</p>
-          <a href="https://provectuseng.com/" target="_blank" rel="noopener noreferrer">provectuseng.com ↗</a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero__meta"><span>Nashik, India</span><span>Works 2026</span></p>
+        <p class="eyebrow">Portfolio of works</p>
+        <h1 class="hero__title">Arcline</h1>
+        <p class="hero__lead">The web and AI studio of Rohan Tidke</p>
+        <p class="hero__sub">Thirty-two projects: client websites, Shopify stores, AI tools, mobile apps, automation, and brand work.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#work">See the work</a>
+          <a class="btn btn--line" href="#contact">Start a project</a>
+          <span class="tag">Clients in India and Germany</span>
         </div>
-      </details>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">02</span><span class="t">Rushikesh Enterprises</span><span class="k">Auto-parts manufacturing, Nashik</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Company website for an auto-parts manufacturer, won by referral from an earlier client. A hand-coded static build with no framework overhead and no plugins to maintain.</p>
-          <p class="x">HTML · CSS · JavaScript</p>
-          <a href="https://rushikeshentp.com/" target="_blank" rel="noopener noreferrer">rushikeshentp.com ↗</a>
+    <!-- CONTENTS -->
+    <section class="contents" aria-labelledby="contents-title">
+      <div class="wrap">
+        <h2 class="label label--light" id="contents-title">Contents</h2>
+        <ol class="toc">
+          <li data-cat="web"><a href="#web"><span class="toc__n">01</span><span class="toc__t">Client websites</span><span class="toc__c">8 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="shop"><a href="#shop"><span class="toc__n">02</span><span class="toc__t">Shopify and e-commerce</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="ai"><a href="#ai"><span class="toc__n">03</span><span class="toc__t">AI engineering</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="apps"><a href="#apps"><span class="toc__n">04</span><span class="toc__t">Apps and automation</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="platforms"><a href="#platforms"><span class="toc__n">05</span><span class="toc__t">Web apps and platforms</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="brand"><a href="#brand"><span class="toc__n">06</span><span class="toc__t">Brand, design and content</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+          <li data-cat="studio"><a href="#studio"><span class="toc__n">07</span><span class="toc__t">Studio, systems and experiments</span><span class="toc__c">4 projects</span><span class="toc__arrow" aria-hidden="true">→</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="block" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="eyebrow">About</p>
+        <h2 class="block__title" id="about-title">One person, from first scope to launch day.</h2>
+        <div class="about">
+          <div class="about__text">
+            <p>I'm a freelance web developer and AI engineer based in Nashik, India. I build websites, Shopify stores and AI tools that work on launch day and that clients can run themselves afterwards.</p>
+            <p>Most of my clients are manufacturers, exporters and small brands across Maharashtra. <strong>I also work internationally: I built an AI risk-assessment tool for a B2B advisory firm in Germany.</strong> I work solo under the studio name Arcline.</p>
+            <p class="about__note">Computer Science &amp; Design graduate, K. K. Wagh Institute, Nashik, 2025.</p>
+          </div>
+          <dl class="stats">
+            <div><dt>32</dt><dd>projects in this portfolio</dd></div>
+            <div><dt>14</dt><dd>client websites, stores and platforms</dd></div>
+            <div><dt>5</dt><dd>AI products and pipelines</dd></div>
+            <div><dt>2</dt><dd>countries: India and Germany</dd></div>
+          </dl>
         </div>
-      </details>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">03</span><span class="t">Scout Bags India</span><span class="k">Canvas bags, Mumbai, est. 1990</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Catalogue and ordering site for a canvas-bag maker. Product cards with variant carousels, and a UPI QR checkout that hands a pre-filled order confirmation to WhatsApp.</p>
-          <p class="x">HTML · CSS · JavaScript · UPI QR flow · WhatsApp handoff · cPanel</p>
-          <a href="https://scoutbagsindia.com/" target="_blank" rel="noopener noreferrer">scoutbagsindia.com ↗</a>
+    <!-- SERVICES -->
+    <section class="block block--tint" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="eyebrow">What I do</p>
+        <h2 class="block__title" id="services-title">Six kinds of work, one standard.</h2>
+        <ul class="services">
+          <li data-cat="web"><h3>Websites</h3><p>Fast, hand-coded HTML, CSS and JavaScript sites with enquiry capture, SEO basics and hosting set up.</p></li>
+          <li data-cat="shop"><h3>Shopify stores</h3><p>Theme customisation in Liquid, with Razorpay, GST, shipping zones and launch handled.</p></li>
+          <li data-cat="ai"><h3>AI engineering</h3><p>FastAPI backends on Gemini, Claude or local models: structured outputs, retrieval and speech-to-text.</p></li>
+          <li data-cat="apps"><h3>Mobile apps</h3><p>Android apps in Expo and React Native, with Node and MongoDB backends.</p></li>
+          <li data-cat="apps"><h3>Automation</h3><p>Lead pipelines and back-office flows with Make.com, Google Sheets, Brevo and Supabase.</p></li>
+          <li data-cat="brand"><h3>Design and content</h3><p>Brand identity, packaging artwork, Figma screens, landing-page copy and LinkedIn carousels.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <div id="work" class="work" aria-label="Work">
+      <div class="wrap">
+        <div class="work__intro">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="block__title">Thirty-two projects, seven categories.</h2>
         </div>
-      </details>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">04</span><span class="t">Sapien International</span><span class="k">Banana export, Jalgaon</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>B2B export site for a Cavendish G9 banana exporter selling to the Middle East and Southeast Asia: product specifications, container loading data, the farm-to-port process and inquiry capture.</p>
-          <p class="x">HTML · CSS · JavaScript · Netlify</p>
-          <a href="https://sapieninternational.com/" target="_blank" rel="noopener noreferrer">sapieninternational.com ↗</a>
-        </div>
-      </details>
+    <section class="cat" id="web" data-cat="web" aria-labelledby="web-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 01 / 07 <span>8 projects</span></p>
+        <h3 class="cat__title" id="web-title">Client websites</h3>
+        <p class="cat__sub">Hand-coded sites for manufacturers, exporters, studios and non-profits.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">01</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Provectus Engineering Solutions</h4>
+          <p class="card__meta">Engineering and fabrication · Nashik</p>
+          <p class="card__desc">Seven-page corporate site for an engineering firm building SPM machines, sheet-metal work and agricultural equipment. Enquiries land in a Google Sheet with an instant email alert.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Netlify CI · Google Apps Script</p>
+          <a class="card__link" href="https://provectuseng.com/" target="_blank" rel="noopener noreferrer">provectuseng.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">02</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Rushikesh Enterprises</h4>
+          <p class="card__meta">Auto-parts manufacturing · Nashik</p>
+          <p class="card__desc">Company website for an auto-parts manufacturer, won by referral from an earlier client. A hand-coded static build with no framework overhead and no plugins to maintain.</p>
+          <p class="card__stack">HTML · CSS · JavaScript</p>
+          <a class="card__link" href="https://rushikeshentp.com/" target="_blank" rel="noopener noreferrer">rushikeshentp.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">03</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Scout Bags India</h4>
+          <p class="card__meta">Canvas bags · Mumbai · est. 1990</p>
+          <p class="card__desc">Catalogue and ordering site for a canvas-bag maker. Product cards with variant carousels, and a UPI QR checkout that hands a pre-filled order confirmation to WhatsApp.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · UPI QR flow · WhatsApp handoff · cPanel</p>
+          <a class="card__link" href="https://scoutbagsindia.com/" target="_blank" rel="noopener noreferrer">scoutbagsindia.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">04</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Sapien International</h4>
+          <p class="card__meta">Banana export · Jalgaon</p>
+          <p class="card__desc">B2B export site for a Cavendish G9 banana exporter selling to the Middle East and Southeast Asia: product specifications, container loading data, the farm-to-port process and inquiry capture.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Netlify</p>
+          <a class="card__link" href="https://sapieninternational.com/" target="_blank" rel="noopener noreferrer">sapieninternational.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">05</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">SapphyreKraft</h4>
+          <p class="card__meta">Handicraft sourcing and export</p>
+          <p class="card__desc">Wholesale sourcing site connecting overseas buyers with Indian artisans. Filterable catalogue with grouped lightbox galleries, enquiry by email or WhatsApp, and a script that builds a 55-page PDF catalogue.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Netlify · Python (ReportLab, Pillow)</p>
+          <a class="card__link" href="https://sapphyrekraft.com/" target="_blank" rel="noopener noreferrer">sapphyrekraft.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">06</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Gaurav Export</h4>
+          <p class="card__meta">Turmeric export · Thane</p>
+          <p class="card__desc">Export website with its own back office. Enquiries save to a database and the owner manages them in a password-protected dashboard with search, status tracking and CSV export. Full technical SEO pass.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Supabase · Netlify · JSON-LD · UptimeRobot</p>
+          <a class="card__link" href="https://gaurav-export.com/" target="_blank" rel="noopener noreferrer">gaurav-export.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">07</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Vogue Studio</h4>
+          <p class="card__meta">Photography and film · five sub-brands</p>
+          <p class="card__desc">A 31-page site for a multi-brand photography and film studio. Editorial type system, a full-screen index in place of a nav bar, brand hubs, gallery walls with a lightbox, and hover previews.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Netlify · self-hosted type</p>
+          <a class="card__link" href="https://vogue-studio.netlify.app/" target="_blank" rel="noopener noreferrer">vogue-studio.netlify.app <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">08</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Janaadhar Welfare Foundation</h4>
+          <p class="card__meta">Non-profit</p>
+          <p class="card__desc">Awareness site for a foundation working in education, healthcare, environment, disaster relief and community development, with a bilingual public notice and an admin dashboard for enquiries.</p>
+          <p class="card__stack">HTML · CSS · JavaScript · Supabase Auth · Resend · Netlify</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">05</span><span class="t">SapphyreKraft</span><span class="k">Handicraft sourcing and export</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Wholesale sourcing site connecting overseas buyers with Indian artisans. Filterable catalogue with grouped lightbox galleries, enquiry by email or WhatsApp, and a script that builds a 55-page PDF catalogue.</p>
-          <p class="x">HTML · CSS · JavaScript · Netlify · Python (ReportLab, Pillow)</p>
-          <a href="https://sapphyrekraft.com/" target="_blank" rel="noopener noreferrer">sapphyrekraft.com ↗</a>
-        </div>
-      </details>
+    <section class="cat" id="shop" data-cat="shop" aria-labelledby="shop-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 02 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="shop-title">Shopify and e-commerce</h3>
+        <p class="cat__sub">Stores built, redesigned and launched on Shopify, with Indian payments and tax set up.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">09</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Preesa Global Ventures</h4>
+          <p class="card__meta">Handmade soaps and artisan decor · Pune</p>
+          <p class="card__desc">Shopify store taken from a blank theme to launch: custom brand system, Razorpay checkout, GST-inclusive pricing by product type, Shiprocket, and seven international shipping zones.</p>
+          <p class="card__stack">Shopify Horizon · Liquid · CSS · JavaScript · Razorpay · Shiprocket</p>
+          <a class="card__link" href="https://preesaglobalventures.com/" target="_blank" rel="noopener noreferrer">preesaglobalventures.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">10</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Vrinda Mart</h4>
+          <p class="card__meta">Medical equipment distributor · Navi Mumbai</p>
+          <p class="card__desc">Redesign of a nebuliser distributor's store, from a pink fashion theme to a navy-and-teal trade look aimed at wholesale buyers. Home, catalogue, product and contact pages rebuilt.</p>
+          <p class="card__stack">Shopify · Liquid · custom CSS patch layer</p>
+          <a class="card__link" href="https://vrindamart.site/" target="_blank" rel="noopener noreferrer">vrindamart.site <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">11</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Demonoid</h4>
+          <p class="card__meta">Car audio and accessories</p>
+          <p class="card__desc">Full redesign of a premium car-audio brand, moving from a custom Next.js build to Shopify. A dark, aggressive visual system with custom hero, editorial and collection-showcase sections.</p>
+          <p class="card__stack">Shopify Sense · Liquid · CSS · JavaScript</p>
+          <a class="card__link" href="https://demonoid.in/" target="_blank" rel="noopener noreferrer">demonoid.in <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">12</span><span class="chip chip--open">scoping</span></div>
+          <h4 class="card__title">Multilingual Store Migration</h4>
+          <p class="card__meta">Client store · India</p>
+          <p class="card__desc">Migration of a static website into a custom Shopify theme, with a redesign. Four storefront languages (English, Spanish, French, Italian) and international card payments through Razorpay.</p>
+          <p class="card__stack">Shopify Liquid · Shopify Markets · Translate &amp; Adapt · Razorpay</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">06</span><span class="t">Gaurav Export</span><span class="k">Turmeric export, Thane</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Export website with its own back office. Enquiries save to a database and the owner manages them in a password-protected dashboard with search, status tracking and CSV export. Full technical SEO pass.</p>
-          <p class="x">HTML · CSS · JavaScript · Supabase · Netlify · JSON-LD · UptimeRobot</p>
-          <a href="https://gaurav-export.com/" target="_blank" rel="noopener noreferrer">gaurav-export.com ↗</a>
-        </div>
-      </details>
+    <section class="cat" id="ai" data-cat="ai" aria-labelledby="ai-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 03 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="ai-title">AI engineering</h3>
+        <p class="cat__sub">LLM products and pipelines with structured outputs, in the cloud and fully offline.</p>
+      </header>
+      <div class="cards">
+        <article class="card card--feature">
+          <div class="card__top"><span class="card__num">13</span> <span class="card__flag">International client</span><span class="chip chip--open">mvp</span></div>
+          <h4 class="card__title">AI Risk-Assessment Tool</h4>
+          <p class="card__meta">B2B advisory client · Germany</p>
+          <p class="card__desc">Built for a B2B advisory firm in Germany. A structured diagnostic, not a chatbot: visitors answer a short questionnaire and get a board-level summary of red flags, questions to ask and next steps. The client edits every question and prompt in a spreadsheet.</p>
+          <p class="card__stack">React · Vite · FastAPI · Gemini / Claude structured JSON · Google Sheets · Cloudflare</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">14</span><span class="chip chip--open">hackathon</span></div>
+          <h4 class="card__title">CareCompanion</h4>
+          <p class="card__meta">IOSC Hackathon 2026</p>
+          <p class="card__desc">AI health assistant for people managing chronic illness in India. Answers are grounded in retrieved medical context, with voice input and output in Marathi, Hindi and English.</p>
+          <p class="card__stack">FastAPI · React · TypeScript · Gemini · FAISS · Firebase · Google Cloud Run</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">15</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Dastarkhan</h4>
+          <p class="card__meta">North Indian and Mughlai restaurant</p>
+          <p class="card__desc">Live ordering app for a restaurant, serving real customers. Diners describe their mood in a chat and an LLM suggests dishes from the menu, followed by a cart and checkout. Falls back gracefully if the AI service is down.</p>
+          <p class="card__stack">React · Vite · FastAPI · Supabase · OpenRouter · Vercel · Railway</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">16</span><span class="chip chip--done">built</span></div>
+          <h4 class="card__title">Marathi Transcription Pipeline</h4>
+          <p class="card__meta">Offline speech-to-text</p>
+          <p class="card__desc">Turns one- to two-hour Marathi phone recordings into clean transcripts, a Marathi summary and an English translation. Runs fully offline on a consumer GPU, with no API keys and no cloud upload.</p>
+          <p class="card__stack">Python · Whisper · Ollama (Llama 3.1) · PyTorch CUDA</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">07</span><span class="t">Vogue Studio</span><span class="k">Photography and film, five sub-brands</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>A 31-page site for a multi-brand photography and film studio. Editorial type system, a full-screen index in place of a nav bar, brand hubs, gallery walls with a lightbox, and hover previews.</p>
-          <p class="x">HTML · CSS · JavaScript · Netlify · self-hosted type</p>
-          <a href="https://vogue-studio.netlify.app/" target="_blank" rel="noopener noreferrer">vogue-studio.netlify.app ↗</a>
-        </div>
-      </details>
+    <section class="cat" id="apps" data-cat="apps" aria-labelledby="apps-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 04 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="apps-title">Apps and automation</h3>
+        <p class="cat__sub">Mobile apps, workflow automation and design tooling.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">17</span><span class="chip chip--done">delivered</span></div>
+          <h4 class="card__title">Shree Balaji Agro Industries</h4>
+          <p class="card__meta">Field-sales Android app · agrochemicals · Dhule</p>
+          <p class="card__desc">Android app for an agrochemical company's field team, built from a 27-section brief. Five role-based portals, attendance, route-tracked visits, orders, expenses, an offline queue, and a Marathi/English toggle.</p>
+          <p class="card__stack">Expo · React Native · TypeScript · Node · Express · MongoDB · Cloudinary</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">18</span><span class="chip chip--open">scoping</span></div>
+          <h4 class="card__title">Marathi–English Calendar App</h4>
+          <p class="card__meta">Panchang calendar · Android</p>
+          <p class="card__desc">Bilingual consumer calendar for a client. Ekadashi, Chaturthi, Poornima and Amavasya, public holidays and Marathi month names shown on the calendar, plus a page for reminders and notes.</p>
+          <p class="card__stack">Android · Marathi and English · requirements stage</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">19</span><span class="chip chip--done">live demo</span></div>
+          <h4 class="card__title">Lead Automation Pipeline</h4>
+          <p class="card__meta">Marketing automation</p>
+          <p class="card__desc">A lead from a Meta ad form is logged to Google Sheets, added to the mailing list and sent a three-email nurture sequence with nobody touching it. Built as a working demo for client pitches.</p>
+          <p class="card__stack">Make.com · Meta Lead Ads · Google Sheets · Brevo · Netlify</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">20</span><span class="chip chip--done">built</span></div>
+          <h4 class="card__title">HTML-to-Figma Automation</h4>
+          <p class="card__meta">Design tooling</p>
+          <p class="card__desc">Scripts that convert HTML screens into native, editable Figma layers. Used for a seven-screen Burger King app redesign (an unofficial concept) and for the screens of an EPR compliance portal.</p>
+          <p class="card__stack">Figma Script Runner · JavaScript · Figma MCP · HTML · CSS</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="web">
-        <summary><span class="n">08</span><span class="t">Janaadhar Welfare Foundation</span><span class="k">Non-profit</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>Awareness site for a foundation working in education, healthcare, environment, disaster relief and community development, with a bilingual public notice and an admin dashboard for enquiries.</p>
-          <p class="x">HTML · CSS · JavaScript · Supabase Auth · Resend · Netlify</p>
-        </div>
-      </details>
+    <section class="cat" id="platforms" data-cat="platforms" aria-labelledby="platforms-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 05 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="platforms-title">Web apps and platforms</h3>
+        <p class="cat__sub">Larger builds: a marketplace, a SaaS platform, a cinematic site and a personal AI tool.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">21</span><span class="chip chip--done">delivered</span></div>
+          <h4 class="card__title">Saawariya</h4>
+          <p class="card__meta">Multi-seller textile marketplace</p>
+          <p class="card__desc">Saree marketplace with many sellers, selling retail and wholesale. A public storefront plus customer, seller and admin panels across nine logins, built against a 123-page specification in under four weeks.</p>
+          <p class="card__stack">Next.js 16 · Prisma · SQLite · Railway</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">22</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">MoodMenu</h4>
+          <p class="card__meta">White-label SaaS for cafés</p>
+          <p class="card__desc">Customers scan a QR code, chat about their mood and get menu suggestions that fit their budget and allergies. Each café gets its own account, a menu editor with bulk import, and two-factor sign-in.</p>
+          <p class="card__stack">Next.js 16 · Supabase · OpenRouter · QR codes</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">23</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Ennoventure Redesign</h4>
+          <p class="card__meta">Cinematic scroll website</p>
+          <p class="card__desc">A cinematic redesign of a company website in which AI-generated video plays as you scroll. Four video sections, smooth scrolling and scroll-driven animation.</p>
+          <p class="card__stack">Next.js 15 · GSAP · Lenis · Kling video</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">24</span><span class="chip chip--open">mvp</span></div>
+          <h4 class="card__title">Personal OS</h4>
+          <p class="card__meta">Personal AI command centre</p>
+          <p class="card__desc">My own AI command centre for running day-to-day work from one place. The MVP is built; Gmail and web search connections come next.</p>
+          <p class="card__stack">Built with Claude Code</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="shop">
-        <summary><span class="n">09</span><span class="t">Preesa Global Ventures</span><span class="k">Handmade soaps and artisan decor, Pune</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Shopify store taken from a blank theme to launch: custom brand system, Razorpay checkout, GST-inclusive pricing by product type, Shiprocket, and seven international shipping zones.</p>
-          <p class="x">Shopify Horizon · Liquid · CSS · JavaScript · Razorpay · Shiprocket</p>
-          <a href="https://preesaglobalventures.com/" target="_blank" rel="noopener noreferrer">preesaglobalventures.com ↗</a>
-        </div>
-      </details>
+    <section class="cat" id="brand" data-cat="brand" aria-labelledby="brand-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 06 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="brand-title">Brand, design and content</h3>
+        <p class="cat__sub">Identity, packaging, landing pages and research-led content.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">25</span><span class="chip chip--done">built</span></div>
+          <h4 class="card__title" aria-label="Mishran">मिshran</h4>
+          <p class="card__meta">E-commerce site · spice and premix brand</p>
+          <p class="card__desc">E-commerce website for an Indian spice and cooking premix brand. A storefront where the owner manages products without a developer, plus a redrawn mortar-and-pestle logo and AI-generated catalogue photography.</p>
+          <p class="card__stack">Lovable · Shopify Storefront API · Vercel · SVG logo · Gemini image prompts</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">26</span><span class="chip chip--open">in build</span></div>
+          <h4 class="card__title">Design It Well: Deck to Design</h4>
+          <p class="card__meta">Card-deck packaging</p>
+          <p class="card__desc">Print-ready carton artwork for a First Principles card deck, applied panel by panel to the printer's dieline as editable vectors, with the dieline geometry left untouched. Built for CMYK production.</p>
+          <p class="card__stack">Adobe Illustrator · ExtendScript (.jsx) · CMYK print</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">27</span><span class="chip chip--done">built</span></div>
+          <h4 class="card__title">LaunchOS</h4>
+          <p class="card__meta">SaaS landing page and launch content</p>
+          <p class="card__desc">Landing page, design system and launch content for a startup dashboard covering runway, investor updates and team goals. Several full page versions, feature copy, a LinkedIn post and an investor update.</p>
+          <p class="card__stack">HTML · CSS · design system · copywriting</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">28</span><span class="chip chip--open">ongoing</span></div>
+          <h4 class="card__title">ExportAxis LinkedIn Carousels</h4>
+          <p class="card__meta">Content series for Indian exporters</p>
+          <p class="card__desc">Research-backed carousels that show exporters how overseas buyers judge a supplier's website. Six produced so far, including a before-and-after teardown and the running Shortlist Rule series.</p>
+          <p class="card__stack">HTML and CSS slides · PDF and PNG export · source-verified research</p>
+        </article>
+      </div>
+    </section>
 
-      <details class="w" data-c="shop">
-        <summary><span class="n">10</span><span class="t">Vrinda Mart</span><span class="k">Medical equipment distributor, Navi Mumbai</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>Redesign of a nebuliser distributor's store, from a pink fashion theme to a navy-and-teal trade look aimed at wholesale buyers. Home, catalogue, product and contact pages rebuilt.</p>
-          <p class="x">Shopify · Liquid · custom CSS patch layer</p>
-          <a href="https://vrindamart.site/" target="_blank" rel="noopener noreferrer">vrindamart.site ↗</a>
-        </div>
-      </details>
-
-      <details class="w" data-c="shop">
-        <summary><span class="n">11</span><span class="t">Demonoid</span><span class="k">Car audio and accessories</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>Full redesign of a premium car-audio brand, moving from a custom Next.js build to Shopify. A dark, aggressive visual system with custom hero, editorial and collection-showcase sections.</p>
-          <p class="x">Shopify Sense · Liquid · CSS · JavaScript</p>
-          <a href="https://demonoid.in/" target="_blank" rel="noopener noreferrer">demonoid.in ↗</a>
-        </div>
-      </details>
-
-      <details class="w" data-c="shop">
-        <summary><span class="n">12</span><span class="t">Multilingual Store Migration</span><span class="k">Client store, India</span><span class="s">scoping</span></summary>
-        <div class="d">
-          <p>Migration of a static website into a custom Shopify theme, with a redesign. Four storefront languages (English, Spanish, French, Italian) and international card payments through Razorpay.</p>
-          <p class="x">Shopify Liquid · Shopify Markets · Translate &amp; Adapt · Razorpay</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="ai">
-        <summary><span class="n">13</span><span class="t">AI Risk-Assessment Tool</span><span class="k">B2B advisory client, Germany</span><span class="s">mvp</span></summary>
-        <div class="d">
-          <p>Built for a B2B advisory firm in Germany. A structured diagnostic, not a chatbot: visitors answer a short questionnaire and get a board-level summary of red flags, questions to ask and next steps. The client edits every question and prompt in a spreadsheet.</p>
-          <p class="x">React · Vite · FastAPI · Gemini / Claude structured JSON · Google Sheets · Cloudflare</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="ai">
-        <summary><span class="n">14</span><span class="t">CareCompanion</span><span class="k">IOSC Hackathon 2026</span><span class="s">hackathon</span></summary>
-        <div class="d">
-          <p>AI health assistant for people managing chronic illness in India. Answers are grounded in retrieved medical context, with voice input and output in Marathi, Hindi and English.</p>
-          <p class="x">FastAPI · React · TypeScript · Gemini · FAISS · Firebase · Google Cloud Run</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="ai">
-        <summary><span class="n">15</span><span class="t">Dastarkhan</span><span class="k">North Indian and Mughlai restaurant</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>Live ordering app for a restaurant, serving real customers. Diners describe their mood in a chat and an LLM suggests dishes from the menu, followed by a cart and checkout. Falls back gracefully if the AI service is down.</p>
-          <p class="x">React · Vite · FastAPI · Supabase · OpenRouter · Vercel · Railway</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="ai">
-        <summary><span class="n">16</span><span class="t">Marathi Transcription Pipeline</span><span class="k">Offline speech-to-text</span><span class="s">built</span></summary>
-        <div class="d">
-          <p>Turns one- to two-hour Marathi phone recordings into clean transcripts, a Marathi summary and an English translation. Runs fully offline on a consumer GPU, with no API keys and no cloud upload.</p>
-          <p class="x">Python · Whisper · Ollama (Llama 3.1) · PyTorch CUDA</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="apps">
-        <summary><span class="n">17</span><span class="t">Shree Balaji Agro Industries</span><span class="k">Field-sales Android app, Dhule</span><span class="s">delivered</span></summary>
-        <div class="d">
-          <p>Android app for an agrochemical company's field team, built from a 27-section brief. Five role-based portals, attendance, route-tracked visits, orders, expenses, an offline queue, and a Marathi/English toggle.</p>
-          <p class="x">Expo · React Native · TypeScript · Node · Express · MongoDB · Cloudinary</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="apps">
-        <summary><span class="n">18</span><span class="t">Marathi–English Calendar App</span><span class="k">Panchang calendar, Android</span><span class="s">scoping</span></summary>
-        <div class="d">
-          <p>Bilingual consumer calendar for a client. Ekadashi, Chaturthi, Poornima and Amavasya, public holidays and Marathi month names shown on the calendar, plus a page for reminders and notes.</p>
-          <p class="x">Android · Marathi and English · requirements stage</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="apps">
-        <summary><span class="n">19</span><span class="t">Lead Automation Pipeline</span><span class="k">Marketing automation</span><span class="s">live demo</span></summary>
-        <div class="d">
-          <p>A lead from a Meta ad form is logged to Google Sheets, added to the mailing list and sent a three-email nurture sequence with nobody touching it. Built as a working demo for client pitches.</p>
-          <p class="x">Make.com · Meta Lead Ads · Google Sheets · Brevo · Netlify</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="apps">
-        <summary><span class="n">20</span><span class="t">HTML-to-Figma Automation</span><span class="k">Design tooling</span><span class="s">built</span></summary>
-        <div class="d">
-          <p>Scripts that convert HTML screens into native, editable Figma layers. Used for a seven-screen Burger King app redesign (an unofficial concept) and for the screens of an EPR compliance portal.</p>
-          <p class="x">Figma Script Runner · JavaScript · Figma MCP · HTML · CSS</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="platforms">
-        <summary><span class="n">21</span><span class="t">Saawariya</span><span class="k">Multi-seller textile marketplace</span><span class="s">delivered</span></summary>
-        <div class="d">
-          <p>Saree marketplace with many sellers, selling retail and wholesale. A public storefront plus customer, seller and admin panels across nine logins, built against a 123-page specification in under four weeks.</p>
-          <p class="x">Next.js 16 · Prisma · SQLite · Railway</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="platforms">
-        <summary><span class="n">22</span><span class="t">MoodMenu</span><span class="k">White-label SaaS for cafés</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>Customers scan a QR code, chat about their mood and get menu suggestions that fit their budget and allergies. Each café gets its own account, a menu editor with bulk import, and two-factor sign-in.</p>
-          <p class="x">Next.js 16 · Supabase · OpenRouter · QR codes</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="platforms">
-        <summary><span class="n">23</span><span class="t">Ennoventure Redesign</span><span class="k">Cinematic scroll website</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>A cinematic redesign of a company website in which AI-generated video plays as you scroll. Four video sections, smooth scrolling and scroll-driven animation.</p>
-          <p class="x">Next.js 15 · GSAP · Lenis · Kling video</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="platforms">
-        <summary><span class="n">24</span><span class="t">Personal OS</span><span class="k">Personal AI command centre</span><span class="s">mvp</span></summary>
-        <div class="d">
-          <p>My own AI command centre for running day-to-day work from one place. The MVP is built; Gmail and web search connections come next.</p>
-          <p class="x">Built with Claude Code</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="brand">
-        <summary><span class="n">25</span><span class="t" aria-label="Mishran">मिshran</span><span class="k">Spice and premix brand</span><span class="s">built</span></summary>
-        <div class="d">
-          <p>E-commerce website for an Indian spice and cooking premix brand. A storefront where the owner manages products without a developer, plus a redrawn mortar-and-pestle logo and AI-generated catalogue photography.</p>
-          <p class="x">Lovable · Shopify Storefront API · Vercel · SVG logo · Gemini image prompts</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="brand">
-        <summary><span class="n">26</span><span class="t">Design It Well: Deck to Design</span><span class="k">Card-deck packaging</span><span class="s">in build</span></summary>
-        <div class="d">
-          <p>Print-ready carton artwork for a First Principles card deck, applied panel by panel to the printer's dieline as editable vectors, with the dieline geometry left untouched. Built for CMYK production.</p>
-          <p class="x">Adobe Illustrator · ExtendScript (.jsx) · CMYK print</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="brand">
-        <summary><span class="n">27</span><span class="t">LaunchOS</span><span class="k">SaaS landing page and launch content</span><span class="s">built</span></summary>
-        <div class="d">
-          <p>Landing page, design system and launch content for a startup dashboard covering runway, investor updates and team goals. Several full page versions, feature copy, a LinkedIn post and an investor update.</p>
-          <p class="x">HTML · CSS · design system · copywriting</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="brand">
-        <summary><span class="n">28</span><span class="t">ExportAxis LinkedIn Carousels</span><span class="k">Content series for Indian exporters</span><span class="s">ongoing</span></summary>
-        <div class="d">
-          <p>Research-backed carousels that show exporters how overseas buyers judge a supplier's website. Six produced so far, including a before-and-after teardown and the running Shortlist Rule series.</p>
-          <p class="x">HTML and CSS slides · PDF and PNG export · source-verified research</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="studio">
-        <summary><span class="n">29</span><span class="t">Arcline</span><span class="k">Studio identity and portfolio site</span><span class="s">live</span></summary>
-        <div class="d">
-          <p>The page you are reading. One column, one weight, no colour: a running paragraph that doubles as the filter, and a numbered ledger in place of sections.</p>
-          <p class="x">HTML · CSS · vanilla JavaScript · GitHub Pages</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="studio">
-        <summary><span class="n">30</span><span class="t">web-kit</span><span class="k">Reusable build system</span><span class="s">internal</span></summary>
-        <div class="d">
-          <p>The system behind every client site: brand-neutral craft rules, a per-client identity brief, launch and SEO playbooks, and custom Claude skills. A companion kit produces quotations and receipts as PDFs.</p>
-          <p class="x">Markdown · Claude Code skills · ReportLab · wkhtmltopdf</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="studio">
-        <summary><span class="n">31</span><span class="t">Vanguard Zero</span><span class="k">Browser tactical shooter</span><span class="s">prototype</span></summary>
-        <div class="d">
-          <p>Playable prototype of a 5v5 objective shooter that runs in the browser, built from a long design spec. Neon cyberpunk look, with slide, mantle, lean and dash movement.</p>
-          <p class="x">Browser build · JavaScript</p>
-        </div>
-      </details>
-
-      <details class="w" data-c="studio">
-        <summary><span class="n">32</span><span class="t">AI Foundations</span><span class="k">Learning builds</span><span class="s">built</span></summary>
-        <div class="d">
-          <p>The groundwork under the client AI work: a retrieval pipeline over local documents, a command-line chatbot with conversation memory, logistic regression written from scratch, and a G-code simulator.</p>
-          <p class="x">Python · LangChain · ChromaDB · Ollama (Llama 3.2) · OpenAI API</p>
-        </div>
-      </details>
-
+    <section class="cat" id="studio" data-cat="studio" aria-labelledby="studio-title">
+      <header class="cat__head">
+        <p class="cat__index">Section 07 / 07 <span>4 projects</span></p>
+        <h3 class="cat__title" id="studio-title">Studio, systems and experiments</h3>
+        <p class="cat__sub">My own studio, the system I build with, and things made to learn.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__top"><span class="card__num">29</span><span class="chip chip--done">live</span></div>
+          <h4 class="card__title">Arcline</h4>
+          <p class="card__meta">Studio brand and portfolio site</p>
+          <p class="card__desc">Identity and portfolio site for my studio, built from the 2026 works brochure: one page, seven colour-coded categories, every project with its stack and status. Hand-coded with no framework.</p>
+          <p class="card__stack">HTML · CSS · vanilla JavaScript · GitHub Pages</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">30</span><span class="chip chip--open">internal</span></div>
+          <h4 class="card__title">web-kit</h4>
+          <p class="card__meta">Reusable build system</p>
+          <p class="card__desc">The system behind every client site: brand-neutral craft rules, a per-client identity brief, launch and SEO playbooks, and custom Claude skills. A companion kit produces quotations and receipts as PDFs.</p>
+          <p class="card__stack">Markdown · Claude Code skills · ReportLab · wkhtmltopdf</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">31</span><span class="chip chip--open">prototype</span></div>
+          <h4 class="card__title">Vanguard Zero</h4>
+          <p class="card__meta">Browser tactical shooter</p>
+          <p class="card__desc">Playable prototype of a 5v5 objective shooter that runs in the browser, built from a long design spec. Neon cyberpunk look, with slide, mantle, lean and dash movement.</p>
+          <p class="card__stack">Browser build · JavaScript</p>
+        </article>
+        <article class="card">
+          <div class="card__top"><span class="card__num">32</span><span class="chip chip--done">built</span></div>
+          <h4 class="card__title">AI Foundations</h4>
+          <p class="card__meta">Learning builds</p>
+          <p class="card__desc">The groundwork under the client AI work: a retrieval pipeline over local documents, a command-line chatbot with conversation memory, logistic regression written from scratch, and a G-code simulator.</p>
+          <p class="card__stack">Python · LangChain · ChromaDB · Ollama (Llama 3.2) · OpenAI API</p>
+        </article>
+      </div>
+    </section>
+      </div>
     </div>
 
-    <p class="prose prose--end">
-      Tell me what you need built. I reply with a written scope and a fixed quotation, settled before any work starts.
-      Domain, hosting, store and database go into accounts you own; you get a handover document with every login and how to update things yourself, and I stay on for fixes after launch.
-      Write to <a href="mailto:tidkerohan8228@gmail.com">tidkerohan8228@gmail.com</a>, or <a href="https://wa.me/918857852631" target="_blank" rel="noopener noreferrer">message on WhatsApp</a>.
-    </p>
+    <!-- PROCESS -->
+    <section class="block block--tint" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <p class="eyebrow">Every project includes</p>
+        <h2 class="block__title" id="process-title">Settled up front, handed over in full.</h2>
+        <ol class="steps">
+          <li><span class="steps__n">01</span><div><h3>A written scope and a fixed quotation</h3><p>Agreed before any work starts, so the price and the deliverables are settled up front.</p></div></li>
+          <li><span class="steps__n">02</span><div><h3>Accounts in your name</h3><p>Domain, hosting, store and database are set up in accounts you own.</p></div></li>
+          <li><span class="steps__n">03</span><div><h3>A handover document</h3><p>Every login, plus how to update the site or store yourself.</p></div></li>
+          <li><span class="steps__n">04</span><div><h3>Support after launch</h3><p>Fixes and revisions once the project is live.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">Contact</p>
+        <h2 class="contact__title" id="contact-title">Start a project.</h2>
+        <p class="contact__lead">Tell me what you need built. I reply with a written scope and a fixed quotation.</p>
+        <dl class="contact__grid">
+          <div><dt>Email</dt><dd><a href="mailto:tidkerohan8228@gmail.com">tidkerohan8228@gmail.com</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/918857852631" target="_blank" rel="noopener noreferrer">Message me</a></dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/rohantdk" target="_blank" rel="noopener noreferrer">rohantdk</a></dd></div>
+          <div><dt>Studio</dt><dd>Arcline · Nashik, Maharashtra, India</dd></div>
+        </dl>
+      </div>
+    </section>
 
   </main>
-
-  <footer class="foot">
-    <span>Computer Science &amp; Design, K. K. Wagh Institute, Nashik, 2025</span>
-    <span><a href="https://github.com/rohantdk" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-    <span>Hand-coded. Set in Instrument Serif and IBM Plex Mono. © 2026</span>
-  </footer>
 
   <script src="script.js"></script>
 </body>

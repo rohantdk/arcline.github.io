@@ -1,58 +1,49 @@
 /* Arcline
-   - Nashik clock in the top line
-   - Category words in the paragraph filter the ledger (and the URL hash)
+   - Mobile menu toggle
+   - Highlight the nav link for the part of the page in view
 */
 
 (() => {
-  /* ─── CLOCK ─── */
-  const clock = document.getElementById('clock');
-  const fmt = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false
-  });
-  const tick = () => { clock.textContent = fmt.format(new Date()) + ' IST'; };
-  tick();
-  setInterval(tick, 15000);
+  /* ─── MOBILE MENU ─── */
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+
+  const setOpen = (open) => {
+    links.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+
+  toggle.addEventListener('click', () => setOpen(!links.classList.contains('is-open')));
+  links.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
 
 
-  /* ─── FILTER ─── */
-  const prose   = document.querySelector('.prose');
-  const words   = [...document.querySelectorAll('.f')];
-  const rows    = [...document.querySelectorAll('.w')];
-  const tally   = document.getElementById('tally');
-  const reset   = document.getElementById('reset');
-  const total   = rows.length;
-  const keys    = new Set(words.map(w => w.dataset.f));
+  /* ─── ACTIVE NAV LINK ─── */
+  const navLinks = [...links.querySelectorAll('a[href^="#"]')];
+  const targets  = navLinks
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
 
-  const apply = (key) => {
-    let shown = 0;
-    rows.forEach(row => {
-      const match = !key || row.dataset.c === key;
-      row.hidden = !match;
-      if (!match) row.open = false;
-      if (match) shown++;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = '#' + entry.target.id;
+      navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === id));
     });
-    words.forEach(w => w.setAttribute('aria-pressed', String(w.dataset.f === key)));
-    prose.classList.toggle('filtering', Boolean(key));
-    reset.hidden = !key;
+  }, { rootMargin: '-45% 0px -50% 0px' });
 
-    const label = key ? ', ' + words.find(w => w.dataset.f === key).firstChild.textContent.trim() : '';
-    tally.textContent = `${shown} of ${total}${label}`;
+  targets.forEach(t => observer.observe(t));
 
-    const hash = key ? '#' + key : '';
-    if (location.hash !== hash) history.replaceState(null, '', hash || location.pathname + location.search);
-  };
 
-  words.forEach(w => w.addEventListener('click', () => {
-    const on = w.getAttribute('aria-pressed') === 'true';
-    apply(on ? null : w.dataset.f);
-  }));
-
-  reset.addEventListener('click', () => apply(null));
-
-  const fromHash = () => {
-    const key = location.hash.slice(1);
-    apply(keys.has(key) ? key : null);
-  };
-  window.addEventListener('hashchange', fromHash);
-  fromHash();
+  /* ─── DEEP LINKS ─── */
+  // Opening on a #hash jumps before the web fonts load and shift the layout;
+  // re-align once they have, then turn on smooth scrolling for in-page links.
+  const target = location.hash && document.querySelector(location.hash);
+  window.addEventListener('load', () => {
+    const settle = () => requestAnimationFrame(() => {
+      if (target) target.scrollIntoView();
+      document.documentElement.classList.add('is-ready');
+    });
+    document.fonts ? document.fonts.ready.then(settle) : settle();
+  }, { once: true });
 })();
