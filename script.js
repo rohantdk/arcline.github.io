@@ -2,7 +2,7 @@
    - Mobile menu toggle
    - Highlight the nav link for the part of the page in view
    - Scroll progress arc in the nav logo
-   - Hero: letter intro, live Nashik clock, the interactive arc
+   - Hero: letter intro, the interactive arc
    - Tools marquee that speeds up and turns with the scroll
    - Scroll reveals, counting stats, card spotlight, magnetic buttons
    - Project filter (status + search by name or stack)
@@ -70,17 +70,6 @@
   }, { passive: true });
   addEventListener('resize', updateProgress);
   updateProgress();
-
-
-  /* ─── LIVE CLOCK (Nashik time, for clients abroad) ─── */
-  const clock = $('[data-clock]');
-  if (clock && window.Intl) {
-    const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false });
-    const tick = () => { clock.textContent = `· ${fmt.format(new Date())} IST`; };
-    tick();
-    clock.hidden = false;
-    setInterval(tick, 15000);
-  }
 
 
   /* ─── HERO TITLE: one span per letter ─── */

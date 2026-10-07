@@ -386,8 +386,7 @@ kbd {
   padding: 1px 6px;
 }
 
-/* ─── hero: live clock, letters ─── */
-.hero__clock { color: var(--accent); margin-left: 4px; font-variant-numeric: tabular-nums; }
+/* ─── hero: letters ─── */
 
 .hero__char { display: inline-block; transition: transform .5s var(--ease), color .3s; }
 @media (hover: hover) and (pointer: fine) {
@@ -411,7 +410,6 @@ kbd {
 .arc__line--echo3 { stroke-width: 1.5; opacity: .16; }
 .arc__ground { stroke: var(--ink); stroke-width: 1; }
 .arc__ticks { stroke: var(--muted); stroke-width: 7; stroke-dasharray: 1 19; opacity: .45; }
-.arc__coord { font-family: var(--mono); font-size: 15px; letter-spacing: .1em; fill: var(--muted); }
 
 .arc__dot { cursor: pointer; outline: none; pointer-events: auto; }
 .arc__hit { fill: transparent; }
@@ -634,10 +632,9 @@ html:has(.palette[open]) { overflow: hidden; }
   .js .hero__arc.reveal { opacity: 1; transform: none; }
   .js .hero__arc .arc__line { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease) var(--d, .3s); }
   .js .hero__arc.is-in .arc__line { stroke-dashoffset: 0; }
-  .js .hero__arc .arc__ground, .js .hero__arc .arc__ticks, .js .hero__arc .arc__coord { opacity: 0; transition: opacity 1s ease .2s; }
+  .js .hero__arc .arc__ground, .js .hero__arc .arc__ticks { opacity: 0; transition: opacity 1s ease .2s; }
   .js .hero__arc.is-in .arc__ground { opacity: 1; }
   .js .hero__arc.is-in .arc__ticks { opacity: .45; }
-  .js .hero__arc.is-in .arc__coord { opacity: 1; }
   .js .hero__arc .arc__pop {
     transform-box: fill-box; transform-origin: center; transform: scale(0);
     transition: transform .7s var(--spring) calc(1.15s + var(--i) * 85ms);

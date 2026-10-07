@@ -25,7 +25,6 @@ with *reduce motion* switched on gets the finished state with no movement.
   the pointer and sways on its own otherwise. Its seven dots are the work categories; hover for the name and count,
   click to jump there. Names and counts are read from the Contents list, so there is nothing extra to update.
 - **Nav logo**: the small arc fills as you scroll down the page.
-- **Live clock**: Nashik time (IST) beside the location, for clients abroad.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
   Edit the list in `index.html`; `data-cat` sets each dot's colour.
 - **Project filter**: above the work. Filter by status (driven by `chip--done` / `chip--open`) or search by name,
