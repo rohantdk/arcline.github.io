@@ -26,8 +26,8 @@ with *reduce motion* switched on gets the finished state with no movement.
   click to jump there. Names and counts are read from the Contents list, so there is nothing extra to update.
 - **Nav logo**: the small arc fills as you scroll down the page. In the Work section it takes the colour of the
   category in view, and (on wide screens) a label beside the logo names it, e.g. "03 / 07 AI engineering".
-- **Live-site previews**: hovering a project's link shows its homepage in a small browser frame beside the cursor
-  (mouse and trackpad only). To add one, save a 640 × 400 px screenshot to `assets/previews/<name>.webp` and add
+- **Live-site previews**: hovering a project card that has a live site shows its homepage in a small browser frame
+  beside the cursor, after a quarter-second pause (at once on the link itself; mouse and trackpad only). To add one, save a 640 × 400 px screenshot to `assets/previews/<name>.webp` and add
   `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
 - **The arc again** (contact): it draws itself on the contact rule, and a dot travels from its foot to its top.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
