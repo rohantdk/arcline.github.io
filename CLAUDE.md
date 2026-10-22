@@ -124,6 +124,25 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   clicked; the owner chose this over leaving them inert.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
+### Arcline Ace (October 2026, idea stage, not on the site)
+
+- **The idea:** "Arcline Ace" is a private AI assistant for a company's own documents (like a custom ChatGPT
+  whose data stays with the company): staff ask, it finds documents and builds reports live. The owner also named
+  the agent inside it "Arcline Actor"; advised using one name (Ace) with clients, so the pitch leaves Actor out.
+- **Honest validation given:** the need is real (staff already paste company data into public AI tools), but
+  "private ChatGPT" alone competes with Copilot, ChatGPT/Claude Enterprise, Glean and free tools (AnythingLLM,
+  Open WebUI, PrivateGPT, Onyx). The value is in permissions, connecting real data (Tally, ERP, Excel, email),
+  cited answers, and a vertical focus. Sell as setup plus yearly support, not a cheap subscription. Validate by
+  interviewing 5–8 existing clients and landing one paid pilot before building.
+- **One-page A4 pitch (PDF) made and sent.** Owner's choices: audience is owners of client firms (exporters and
+  manufacturers); three workflows (export documents, buyer queries, live reports); privacy promise is "your
+  choice of setup": on your premises or a private cloud account in the client's name, never used to train AI
+  (not "on-premise only"); call to action "Start with one workflow. Book a discovery call."; contact is email,
+  WhatsApp and arcline-eta.vercel.app. No prices or results printed (none exist yet); no location.
+  The pitch promises role-based access, cited sources and an on-premise option, which aren't built yet.
+- The pitch's HTML source was in the session scratchpad and was not kept (not in the repo, so it isn't published
+  on Pages). Rebuild from this description in the site's tokens and fonts if it needs changing.
+
 ## Open items (next time)
 
 Suggested for the high-ticket positioning, not done yet; the owner decides:
@@ -137,6 +156,8 @@ Suggested for the high-ticket positioning, not done yet; the owner decides:
 5. **Qualify enquiries:** a "projects start from ₹X" line or a short enquiry form (budget, timeline) in place of
    "Message us" on WhatsApp. Needs the owner's figure.
 6. Hero dots are small on phones (about 15 px); enlarge if the owner wants them tappable there.
+7. **Arcline Ace next steps** (owner's call): client interview questions, a technical architecture, a prototype
+   of one workflow, a Hindi version of the pitch, or adding Ace to the site once a pilot exists.
 
 ## Working with the owner
 
