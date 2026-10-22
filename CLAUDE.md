@@ -2,7 +2,9 @@
 
 Portfolio site of Arcline, the web and AI studio founded by Rohan Tidke. One static page: `index.html`,
 `style.css`, `script.js`, plus `assets/`. No framework, no build step, no dependencies. Live at
-https://rohantdk.github.io/arcline.github.io/ (GitHub Pages, published from `main`).
+https://rohantdk.github.io/arcline.github.io/ (GitHub Pages, published from `main`) and on Vercel at
+https://arcline-eta.vercel.app (project `arcline`, team "tidkerohan8228-3858's projects", linked to `main`, so
+every push to `main` redeploys both).
 
 `README.md` is the reference for page structure, the colour tokens, every motion feature and how to add a
 project or a preview. Read it before changing anything. This file holds what README doesn't: the rules, how
@@ -37,6 +39,11 @@ changes go live, and decisions already made.
 4. Confirm the "pages build and deployment" workflow run for the merge commit finished with `success`.
    The cloud environment's network blocks `*.github.io`, so check the workflow run, not the live page.
    It sits in `queued` for a while and usually finishes within a minute or two.
+   Vercel deploys the same commit; check it with the Vercel tools (`get_project` "arcline"). The network blocks
+   `*.vercel.app` too; `web_fetch_vercel_url` can fetch it. The owner created the project in the dashboard
+   because the Vercel connection here isn't allowed to create projects. Share the short production link, not
+   the per-deployment one (that sits behind Vercel login). `og:url` and the share image still point at GitHub
+   Pages, by the owner's choice (October 2026).
 5. Tell the owner to hard-reload (Ctrl+Shift+R / Cmd+Shift+R): Pages caches files for about 10 minutes.
 
 ## Live-site preview screenshots
