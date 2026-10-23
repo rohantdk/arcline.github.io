@@ -143,6 +143,20 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - The pitch's HTML source was in the session scratchpad and was not kept (not in the repo, so it isn't published
   on Pages). Rebuild from this description in the site's tokens and fonts if it needs changing.
 
+### Separate AI-only site (October 2026)
+
+- The owner wants Arcline niche, so a second site sells only AI engineering to owners of manufacturing and export
+  firms: repo `rohantdk/arcline-ai`, live at https://arcline-ai-ace.vercel.app (Vercel project `arcline-ai`,
+  deploys every push to its `main`). Its own `CLAUDE.md` holds its rules and decisions.
+- **Keep the two sites separate:** neither links to the other. This site stays the full portfolio; don't change
+  it to match the AI site unless the owner asks.
+- Its copy came from an Ogilvy-style audit of this site's copy (scored 58/100; the rewrite 94/100, 100 once a
+  real client quote and a measured result exist). Main fixes: a promise as the headline instead of the brand
+  name, one reader and one offer, a problem story, and proof framed as "what it proves for you".
+- It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three job dots, the strip, decoding
+  labels, counting stats), with the AI violet as its accent. It sells the Arcline Ace idea as a build service under
+  the name "Arcline" only.
+
 ## Open items (next time)
 
 Suggested for the high-ticket positioning, not done yet; the owner decides:
