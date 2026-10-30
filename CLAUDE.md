@@ -143,6 +143,19 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - The pitch's HTML source was in the session scratchpad and was not kept (not in the repo, so it isn't published
   on Pages). Rebuild from this description in the site's tokens and fonts if it needs changing.
 
+### Portable copy for other hosts (October 2026)
+
+- The owner asked for the site as a zip to deploy on Netlify or Vercel later with a new custom domain. Given as
+  `arcline-site.zip` with one top folder `arcline-site/` holding `index.html`, `style.css`, `script.js` and
+  `assets/`. Every internal path is relative, so the folder works on any host or domain unchanged.
+- Leave `CLAUDE.md` out of any deploy copy: whatever is in the folder gets published, and this file holds private
+  notes. `README.md` and `.git` are left out too.
+- Don't commit the zip: on `main` it would be published on Pages, and it goes stale with the next change. Build it
+  in the scratchpad, send it, and make a fresh one whenever the owner asks.
+- Told the owner: Netlify Drop (app.netlify.com/drop) takes the dropped folder; Vercel has no true folder drop, so
+  keep the Git link (recommended) or run `npx vercel --prod` in the folder. On a new domain, update `og:url` and
+  `og:image` (`index.html` lines 11 and 13) and the share image's printed address (see open item 3).
+
 ## Open items (next time)
 
 Suggested for the high-ticket positioning, not done yet; the owner decides:
