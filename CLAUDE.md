@@ -177,6 +177,11 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   the owner; the hero example now loops on its own and pauses on hover so the visitor presses Approve; each strip
   pill shows a card on hover (a question and what the AI does with it). It isn't in this session's repo by default:
   attach it with `add_repo` (`rohantdk/arcline-ai`) and clone it to `/home/user/arcline-ai`.
+- **Live AI demo (30 October 2026, details in its `CLAUDE.md`):** the AI site's hero example is now a buyer email
+  and the reply its AI drafted, with Approve; visitors can try their own email, answered live by an open-source
+  model on Groq (`api/demo.js`, `openai/gpt-oss-120b`; the owner's `GROQ_API_KEY` is in that Vercel project). A
+  one-question "Your first pilot" section sends a three-line pilot on WhatsApp. The owner asked to keep both
+  simple.
 - **Keep the two sites separate:** neither links to the other. This site stays the full portfolio; don't change
   it to match the AI site unless the owner asks.
 - It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three dots, the strip, decoding
