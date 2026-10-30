@@ -128,6 +128,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - Cards with a live site open it from a click anywhere on the card (stretched link, CSS only; the trade-off is
   that text in those cards can't be selected). Cards without a link scroll fully into view and flash when
   clicked; the owner chose this over leaving them inert.
+- **Founder face in About (30 October 2026):** after rameerez.com's squishy face. The owner chose full squish over
+  the gentler version advised, and a geometric avatar over a photo (no uncanny photo editing). It sits under the
+  founder paragraph with the caption "Founder" (Rohan isn't named a second time) and a "Drag the face" hint, shown
+  only when it's interactive. Pupils follow the mouse only (rule 3); dragging works with touch too.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
 ### Arcline Ace (October 2026, idea stage, not on the site)
