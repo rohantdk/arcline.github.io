@@ -45,7 +45,9 @@ changes go live, and decisions already made.
 4. Confirm the "pages build and deployment" workflow run for the merge commit finished with `success`.
    The cloud environment's network blocks `*.github.io`, so check the workflow run, not the live page.
    It sits in `queued` for a while and usually finishes within a minute or two.
-   Vercel deploys the same commit; check it with the Vercel tools (`get_project` "arcline"). The network blocks
+   Vercel deploys the same commit; check it with the Vercel tools (`get_project` "arcline"), or, when they aren't in
+   the session, with the Context web-scrape tool (`maxAgeMs: 0`, `formats.parse` with CSS rules in
+   `parseParams.rules`), which reaches both `*.vercel.app` and `*.github.io`. The network blocks
    `*.vercel.app` too; `web_fetch_vercel_url` can fetch it. The owner created the project in the dashboard
    because the Vercel connection here isn't allowed to create projects. Share the short production link, not
    the per-deployment one (that sits behind Vercel login). `og:url` and the share image still point at GitHub
@@ -130,7 +132,7 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   clicked; the owner chose this over leaving them inert.
 - **Founder face (30 October 2026):** a squishy geometric face (eyes follow the cursor, drag to squish, after
   rameerez.com) was live in About here briefly, then moved to the AI site's Contact at the owner's request. It is in
-  git history (#25) if wanted back. The owner plans to swap the drawing for their photo later (on the AI site).
+  git history (#25) if wanted back. On the AI site it is now drawn to look like the owner, from a photo they sent.
 - Advised against, owner agreed: a loading screen, a custom cursor, scroll-jacking or heavy parallax.
 
 ### Arcline Ace (October 2026, idea stage, not on the site)
@@ -171,6 +173,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   firms: repo `rohantdk/arcline-ai`, live at https://arcline-ai-ace.vercel.app (Vercel project `arcline-ai`,
   deploys every push to its `main`). Its own `CLAUDE.md` holds its rules and decisions; read it before changing
   that site. Note: arcline-eta.vercel.app is this site, not the AI one.
+- **Added 30 October 2026 (details in its `CLAUDE.md`):** the squishy founder face in Contact, drawn to look like
+  the owner; the hero example now loops on its own and pauses on hover so the visitor presses Approve; each strip
+  pill shows a card on hover (a question and what the AI does with it). It isn't in this session's repo by default:
+  attach it with `add_repo` (`rohantdk/arcline-ai`) and clone it to `/home/user/arcline-ai`.
 - **Keep the two sites separate:** neither links to the other. This site stays the full portfolio; don't change
   it to match the AI site unless the owner asks.
 - It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three dots, the strip, decoding
