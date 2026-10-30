@@ -186,6 +186,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   buttons on the left; the example box on the right, centred against them (stacked below on phones). The hero
   headline is now 68px max and wraps as "Your company's / own AI. / Not rented. / Not shared."; the contact
   headline stays at 80px max.
+- **Portable copy (30 October 2026):** the AI site was also given as `arcline-ai-site.zip` (one folder with
+  `index.html`, `style.css`, `script.js`, `assets/`; no `CLAUDE.md`, `README.md` or `.git`) for a future Vercel or
+  Netlify deploy on a new domain. Same rules as this site's zip: build it in the scratchpad, never commit it. On a
+  new domain update its `og:url`, `og:image`, `canonical` and the share image's printed address.
 - This positioning is broader than the Arcline Ace pitch PDF above (a document assistant); rebuild the pitch to
   match if the owner wants it.
 
