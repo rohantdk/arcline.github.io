@@ -33,10 +33,6 @@ with *reduce motion* switched on gets the finished state with no movement.
   `data-peek="assets/previews/<name>.webp"` to the card's `card__link`.
 - **Whole-card links**: a card's `card__link` is stretched over the card (in `style.css`), so a click or tap
   anywhere on it opens the site. Cards without a link light up briefly when clicked instead.
-- **The founder's face** (About): a geometric face in the logo's style, standing on its baseline with the wine
-  full stop. Its square pupils follow the cursor and it blinks now and then; drag it and it stretches toward the
-  pointer, then wobbles back on a spring (touch drag works too). The shapes are read from the SVG in `index.html`,
-  so edit the face there. Static under reduced motion and without JavaScript.
 - **The mark again** (contact): it draws itself on the contact rule, and a dot slides along its line and lands as its full stop.
 - **Tools marquee**: below the hero. It speeds up as you scroll, turns with the scroll direction and pauses on hover.
   Edit the list in `index.html`; `data-cat` sets each dot's colour.
