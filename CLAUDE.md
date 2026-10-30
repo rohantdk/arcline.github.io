@@ -177,6 +177,11 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
 - **Minimal, rounded redesign (live 30 October 2026):** about 370 words; rounded interface with a square logo; a
   nav that rounds into a pill on scroll; a hero example that plays the task on hover. That Vercel project builds
   only `main`, so redesigns are reviewed on a private claude.ai preview page first.
+- **Size and motion tweaks (live 30 October 2026):** the hero and contact headlines dropped to 80px max so each
+  sits on two lines (they had run to four on wide screens); section labels grew to 13–15px; the nav grew to 72px
+  with a 32px logo and larger links and button. Questions slide open and shut: CSS `::details-content` in
+  Chrome/Edge, a short Web Animations script in Safari/Firefox (not tested here; the owner checks on iPhone),
+  instant under reduced motion.
 - This positioning is broader than the Arcline Ace pitch PDF above (a document assistant); rebuild the pitch to
   match if the owner wants it.
 
