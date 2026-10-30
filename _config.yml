@@ -1,0 +1,3 @@
+# GitHub Pages: keep the private project notes off the published site
+exclude:
+  - CLAUDE.md
