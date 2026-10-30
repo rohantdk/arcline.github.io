@@ -182,6 +182,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   with a 32px logo and larger links and button. Questions slide open and shut: CSS `::details-content` in
   Chrome/Edge, a short Web Animations script in Safari/Firefox (not tested here; the owner checks on iPhone),
   instant under reduced motion.
+- **Hero layout (live 30 October 2026):** two columns in one row: the "a." mark, headline, outcomes line and
+  buttons on the left; the example box on the right, centred against them (stacked below on phones). The hero
+  headline is now 68px max and wraps as "Your company's / own AI. / Not rented. / Not shared."; the contact
+  headline stays at 80px max.
 - This positioning is broader than the Arcline Ace pitch PDF above (a document assistant); rebuild the pitch to
   match if the owner wants it.
 
