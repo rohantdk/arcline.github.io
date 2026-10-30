@@ -6,6 +6,12 @@ https://rohantdk.github.io/arcline.github.io/ (GitHub Pages, published from `mai
 https://arcline-eta.vercel.app (project `arcline`, team "tidkerohan8228-3858's projects", linked to `main`, so
 every push to `main` redeploys both).
 
+**Keep `_config.yml` and `.vercelignore`.** They stop GitHub Pages and Vercel publishing this file (`CLAUDE.md`),
+which holds private notes; before them (30 October 2026) anyone could read them at /CLAUDE.md. Don't delete
+either, and add any new private file to both. After a change to them, check that /CLAUDE.md returns 404 on both
+hosts (the Context web-scrape tool can reach `*.github.io` and `*.vercel.app` with `maxAgeMs: 0`). The GitHub
+repo itself is public, so the notes can still be read there. The AI site has its own `.vercelignore`.
+
 `README.md` is the reference for page structure, the colour tokens, every motion feature and how to add a
 project or a preview. Read it before changing anything. This file holds what README doesn't: the rules, how
 changes go live, and decisions already made.
