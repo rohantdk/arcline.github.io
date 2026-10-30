@@ -156,6 +156,28 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   keep the Git link (recommended) or run `npx vercel --prod` in the folder. On a new domain, update `og:url` and
   `og:image` (`index.html` lines 11 and 13) and the share image's printed address (see open item 3).
 
+### Separate AI-only site (October 2026)
+
+- The owner wants Arcline niche, so a second site sells only AI engineering to owners of manufacturing and export
+  firms: repo `rohantdk/arcline-ai`, live at https://arcline-ai-ace.vercel.app (Vercel project `arcline-ai`,
+  deploys every push to its `main`). Its own `CLAUDE.md` holds its rules and decisions; read it before changing
+  that site. Note: arcline-eta.vercel.app is this site, not the AI one.
+- **Keep the two sites separate:** neither links to the other. This site stays the full portfolio; don't change
+  it to match the AI site unless the owner asks.
+- It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three dots, the strip, decoding
+  labels, counting stats), with the AI violet as its accent, under the name "Arcline" only.
+- **Positioning (30 October 2026):** "Your company's own AI. Not rented. Not shared." Arcline builds custom AI for
+  the whole company, owned by the company, not a private ChatGPT that only finds documents. It runs on the
+  client's own servers or a private cloud account in its name (their choice) and is never used to train anyone
+  else's AI. The owner confirmed it can deliver: cited answers, actions a person approves (quotes, export
+  documents, sheet updates), work across email, Excel and the client's ERP, a separate AI per team with limited
+  access, and learning the company's products and terms. The way in stays a one-workflow pilot, then grow across
+  teams; don't sell a company-wide setup from day one until a reference client exists. No Tally promise yet.
+- **Minimal copy:** the owner found the page too wordy; it was cut to about 590 words. Say each point once, in the
+  fewest words. The share image was redrawn with the new headline.
+- This positioning is broader than the Arcline Ace pitch PDF above (a document assistant); rebuild the pitch to
+  match if the owner wants it.
+
 ## Open items (next time)
 
 Suggested for the high-ticket positioning, not done yet; the owner decides:
