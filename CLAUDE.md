@@ -166,15 +166,17 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   it to match the AI site unless the owner asks.
 - It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three dots, the strip, decoding
   labels, counting stats), with the AI violet as its accent, under the name "Arcline" only.
-- **Positioning (30 October 2026):** "Your company's own AI. Not rented. Not shared." Arcline builds custom AI for
-  the whole company, owned by the company, not a private ChatGPT that only finds documents. It runs on the
-  client's own servers or a private cloud account in its name (their choice) and is never used to train anyone
-  else's AI. The owner confirmed it can deliver: cited answers, actions a person approves (quotes, export
-  documents, sheet updates), work across email, Excel and the client's ERP, a separate AI per team with limited
-  access, and learning the company's products and terms. The way in stays a one-workflow pilot, then grow across
-  teams; don't sell a company-wide setup from day one until a reference client exists. No Tally promise yet.
-- **Minimal copy:** the owner found the page too wordy; it was cut to about 590 words. Say each point once, in the
-  fewest words. The share image was redrawn with the new headline.
+- **Positioning (30 October 2026):** outcomes first, ownership second. Hero: "Your company's own AI. Not rented.
+  Not shared." with "It saves time, cuts costs and wins orders." under it; the rest of the page leads with time,
+  cost and orders (tiles: Win more orders, Save hours, Cut costs), and the privacy promises sit under "And it stays
+  yours". The owner picked this mix section by section from two versions. Arcline builds custom AI for the whole
+  company, owned by it, on its own servers or a private cloud account in its name, never used to train anyone
+  else's AI. Confirmed deliverable: cited answers, actions a person approves, email/Excel/ERP, a separate AI per
+  team, learning the company's terms. Entry is a one-workflow pilot; no numbers until a pilot measures them; no
+  Tally promise yet. Still to confirm: "no per-user fees" and "we measure hours before and after the pilot".
+- **Minimal, rounded redesign (live 30 October 2026):** about 370 words; rounded interface with a square logo; a
+  nav that rounds into a pill on scroll; a hero example that plays the task on hover. That Vercel project builds
+  only `main`, so redesigns are reviewed on a private claude.ai preview page first.
 - This positioning is broader than the Arcline Ace pitch PDF above (a document assistant); rebuild the pitch to
   match if the owner wants it.
 
