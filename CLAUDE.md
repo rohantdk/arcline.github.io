@@ -219,6 +219,9 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   steps, a calendar week, a clock and coins). Square corners, hard shadows, large headings and section labels; the
   rounded look is gone there. This portfolio was not changed and keeps its own design; the experiments (the line,
   the flock, the woven bands, the split-flap headlines) are in that repo's history if the owner ever wants one here.
+- **AI site fixes (live 31 October 2026, details in its `CLAUDE.md`):** its problem section moved from the dark
+  band to the paper at the owner's request (Contact stays dark); the phone menu, which opened clipped inside the
+  bar, and the nav "Book a call" text, which went dark in Contact, were fixed. This portfolio wasn't changed.
 - **Portable copy (30 October 2026):** the AI site was also given as `arcline-ai-site.zip` (one folder with
   `index.html`, `style.css`, `script.js`, `assets/`; no `CLAUDE.md`, `README.md` or `.git`) for a future Vercel or
   Netlify deploy on a new domain. Same rules as this site's zip: build it in the scratchpad, never commit it. On a
