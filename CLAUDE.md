@@ -182,6 +182,10 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   model on Groq (`api/demo.js`, `openai/gpt-oss-120b`; the owner's `GROQ_API_KEY` is in that Vercel project). A
   one-question "Your first pilot" section sends a three-line pilot on WhatsApp. The owner asked to keep both
   simple.
+- **Added 31 October 2026 (details in its `CLAUDE.md`):** a cost calculator ("Your numbers": the visitor's own
+  yearly cost of one task, in their currency, rolling digits; no savings claimed), chat-style Questions, the hero
+  example as chat bubbles, and a nav pill with a violet beam that glides to the current section. Each came from a
+  React component the owner sent, rebuilt in vanilla.
 - **Keep the two sites separate:** neither links to the other. This site stays the full portfolio; don't change
   it to match the AI site unless the owner asks.
 - It reuses this site's logo, palette, fonts and motion (the hero "a." mark with three dots, the strip, decoding
