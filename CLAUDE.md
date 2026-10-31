@@ -198,7 +198,7 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   else's AI. Confirmed deliverable: cited answers, actions a person approves, email/Excel/ERP, a separate AI per
   team, learning the company's terms. Entry is a one-workflow pilot; no numbers until a pilot measures them; no
   Tally promise yet. Still to confirm: "no per-user fees" and "we measure hours before and after the pilot".
-- **Minimal, rounded redesign (live 30 October 2026):** about 370 words; rounded interface with a square logo; a
+- **Minimal, rounded redesign (live 30 October 2026, replaced by One Line on 31 October):** about 370 words; rounded interface with a square logo; a
   nav that rounds into a pill on scroll; a hero example that plays the task on hover. That Vercel project builds
   only `main`, so redesigns are reviewed on a private claude.ai preview page first.
 - **Size and motion tweaks (live 30 October 2026):** the hero and contact headlines dropped to 80px max so each
@@ -210,6 +210,15 @@ and `dismissPopups` on, `waitFor` 2500. Resize to 640 × 400 WebP (quality 80) i
   buttons on the left; the example box on the right, centred against them (stacked below on phones). The hero
   headline is now 68px max and wraps as "Your company's / own AI. / Not rented. / Not shared."; the contact
   headline stays at 80px max.
+- **"One Line" redesign of the AI site (live 31 October 2026, details in its `CLAUDE.md`):** the owner asked for a
+  "crazy, unconventional" redesign of the AI site, same palette and copy, backed up first (branch
+  `backup/pre-redesign` in `rohantdk/arcline-ai`). Five experiments were previewed (One Line, The Document,
+  Murmuration, The Loom, Departures); the owner chose One Line + Murmuration, kept simple: the logo's thick line
+  runs through the page under every heading and lands in Contact, and seven small dark windows sit on it, where a
+  flock of square dots forms a picture of each heading (documents, the letters AI, a locked database, four AI chips,
+  steps, a calendar week, a clock and coins). Square corners, hard shadows, large headings and section labels; the
+  rounded look is gone there. This portfolio was not changed and keeps its own design; the experiments (the line,
+  the flock, the woven bands, the split-flap headlines) are in that repo's history if the owner ever wants one here.
 - **Portable copy (30 October 2026):** the AI site was also given as `arcline-ai-site.zip` (one folder with
   `index.html`, `style.css`, `script.js`, `assets/`; no `CLAUDE.md`, `README.md` or `.git`) for a future Vercel or
   Netlify deploy on a new domain. Same rules as this site's zip: build it in the scratchpad, never commit it. On a
